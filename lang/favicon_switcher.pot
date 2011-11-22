@@ -1,0 +1,123 @@
+Content-Transfer-Encoding: 8bit
+
+#: favicon-switcher.php:172
+#@ favicon_switcher
+msgid "This plugin enables multiple favicon for your website"
+msgstr ""
+
+#: favicon-switcher.php:189
+#@ favicon_switcher
+msgid "Default Favicon"
+msgstr ""
+
+#: favicon-switcher.php:191
+#@ favicon_switcher
+msgid "The default favicon image:"
+msgstr ""
+
+#: favicon-switcher.php:202
+#: favicon-switcher.php:232
+#: favicon-switcher.php:264
+#@ favicon_switcher
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr ""
+
+#: favicon-switcher.php:204
+#: favicon-switcher.php:215
+#: favicon-switcher.php:234
+#: favicon-switcher.php:245
+#: favicon-switcher.php:266
+#: favicon-switcher.php:277
+#@ favicon_switcher
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr ""
+
+#: favicon-switcher.php:207
+#: favicon-switcher.php:237
+#: favicon-switcher.php:269
+#@ favicon_switcher
+msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
+msgstr ""
+
+#: favicon-switcher.php:213
+#: favicon-switcher.php:243
+#: favicon-switcher.php:275
+#@ favicon_switcher
+msgid "The multiresolution ICO is stored %shere%s"
+msgstr ""
+
+#: favicon-switcher.php:219
+#@ favicon_switcher
+msgid "1st customized Favicon"
+msgstr ""
+
+#: favicon-switcher.php:221
+#@ favicon_switcher
+msgid "The 1st customized favicon image:"
+msgstr ""
+
+#: favicon-switcher.php:248
+#@ favicon_switcher
+msgid "The 1st regexp rule:"
+msgstr ""
+
+#: favicon-switcher.php:249
+#@ favicon_switcher
+msgid "For instance, %s to have a specific icon for admin page"
+msgstr ""
+
+#: favicon-switcher.php:251
+#@ favicon_switcher
+msgid "2nd customized Favicon"
+msgstr ""
+
+#: favicon-switcher.php:253
+#@ favicon_switcher
+msgid "The 2nd customized favicon image:"
+msgstr ""
+
+#: favicon-switcher.php:280
+#@ favicon_switcher
+msgid "The 2nd regexp rule:"
+msgstr ""
+
+#: favicon-switcher.php:281
+#@ favicon_switcher
+msgid "For instance, %s to have a specific icon for the category with name %s"
+msgstr ""
+
+#: favicon-switcher.php:284
+#@ favicon_switcher
+msgid "Parameters"
+msgstr ""
+
+#: favicon-switcher.php:290
+#: core/templates/my-plugin.php:227
+#@ favicon_switcher
+msgid "Manage translations"
+msgstr ""
+
+#: favicon-switcher.php:293
+#: core/templates/my-plugin.php:230
+#@ favicon_switcher
+msgid "This form is an easy way to contact the author and to discuss issues / incompatibilities / etc."
+msgstr ""
+
+#: favicon-switcher.php:297
+#: core/templates/my-plugin.php:234
+#@ favicon_switcher
+msgid "Give feedback"
+msgstr ""
+
+#: favicon-switcher.php:300
+#: core/templates/my-plugin.php:237
+#@ favicon_switcher
+msgid "Here is the plugins developped by the author:"
+msgstr ""
+
+#: favicon-switcher.php:303
+#: core/templates/my-plugin.php:243
+#@ favicon_switcher
+msgid "Other possible plugins"
+msgstr ""
+
