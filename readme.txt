@@ -17,6 +17,7 @@ This plugin enables multiple favicon based on URL match rules
 
 = Localizations =
 
+* Polish translation (by Pablo)
 * Hungarian translation (by Metoyou)
 * French translation (by me)
 
@@ -50,6 +51,9 @@ Moreover, all the plugins developped with this framework is able to use astonish
 
 == Changelog ==
 
+= 1.0.4 =
+* Polish translation (by Pablo)
+
 = 1.0.3 =
 * Hungarian translation (by Metoyou)
 
@@ -66,4 +70,4 @@ Moreover, all the plugins developped with this framework is able to use astonish
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:5fbb19dafb83f4bd0c9809f8115cde05
+InfoVersion:074739922d2376271dbe723b0c167342

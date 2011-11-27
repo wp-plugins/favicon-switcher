@@ -4,11 +4,15 @@
 * VersionInclude : 4.0
 */ 
 
+/* Prevent direct access to this file */
+if (!defined('ABSPATH')) {
+	exit("Sorry, you are not allowed to access this file directly.");
+}
 
+$url = "" ; 
 
 if (!class_exists('pluginSedLex')) {
 	$folders = scandir(WP_PLUGIN_DIR) ; 
-	$url = "" ; 
 	$date = 0 ; 
 	foreach ($folders as $f) {
 		if ($f != "." && $f != "..") {

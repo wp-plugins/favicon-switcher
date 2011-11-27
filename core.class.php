@@ -4,6 +4,11 @@
 * VersionInclude : 3.0
 */ 
 
+/* Prevent direct access to this file */
+if (!defined('ABSPATH')) {
+	exit("Sorry, you are not allowed to access this file directly.");
+}
+
 if (!class_exists('pluginSedLex')) {
 
 	$sedlex_list_scripts = array() ; 
