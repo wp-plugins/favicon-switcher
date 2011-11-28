@@ -2,7 +2,7 @@
 /**
 Plugin Name: FavIcon Switcher
 Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>This plugin is under GPL licence. </p>
-Version: 1.0.4
+Version: 1.0.5
 Framework: SL_Framework
 Author: SedLex
 Author Email: sedlex@sedlex.fr

@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Generated: SL Framework (http://www.sedlex.fr)\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2011-11-28T00:27:47+00:00\n"
+"Last-Translator: BilousovYuriu <prowebstud@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10>3 ? 2 : 1;\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: Ukraine\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+
+msgid "This plugin enables multiple favicon for your website"
+msgstr "Цей плагін дозволяє відображати декілька іконок вашого вебсайту"
+
+msgid "Default Favicon"
+msgstr "Іконка за замовчуванням"
+
+msgid "The default favicon image:"
+msgstr "Зображення іконки за замовчуванням"
+
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr "ICO різної роздільної здатності сформовані і зберігаються в %shere%"
+
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr "Жодна іконка не була сформована через несумісність файлу.... Вибачте!"
+
+msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
+msgstr "Ви можете додати ICO, PNG, GIF, JPG і BMP файл. Він буде перетворений в кратномасштабний ICO файл."
+
+msgid "The multiresolution ICO is stored %shere%s"
+msgstr "Кратномасштабний ICO збережено %shere%"
+
+msgid "1st customized Favicon"
+msgstr "перший індивідуальний Favicon"
+
+msgid "The 1st customized favicon image:"
+msgstr "зображення першого індивідуального Favicon"
+
+msgid "The 1st regexp rule:"
+msgstr "перше правило регулярного виразу"
+
+msgid "For instance, %s to have a specific icon for admin page"
+msgstr "наприклад, %s специфічна іконка для сторінки адміністрування %s"
+
+msgid "2nd customized Favicon"
+msgstr "друге правило регулярного виразу"
+
+msgid "The 2nd customized favicon image:"
+msgstr "зображення другого індивідуального Favicon"
+
+msgid "The 2nd regexp rule:"
+msgstr "друге правило регулярного виразу"
+
+msgid "For instance, %s to have a specific icon for the category with name %s"
+msgstr "наприклад, %s специфічна іконка для категорії %s"
+
+msgid "Parameters"
+msgstr "Параметри"
+
+msgid "Manage translations"
+msgstr "Управління перекладами"
+
+msgid "This form is an easy way to contact the author and to discuss issues / incompatibilities / etc."
+msgstr "Ця форма простий спосіб зв&#039;язатися з автором і обговорити питання / несумісності / і т.д."
+
+msgid "Give feedback"
+msgstr "Залиште відгук"
+
+msgid "Here is the plugins developped by the author:"
+msgstr "Ось плагіни розроблені автором:"
+
+msgid "Other possible plugins"
+msgstr "Інші можливі плагіни"
+
