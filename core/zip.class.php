@@ -90,6 +90,35 @@ if (!class_exists("SL_Zip")) {
 		}	
 		
 		/** ====================================================================================================================================================
+		* Tells whether a zip file is being created or not
+		* 
+		* @param $path the path in which the zip should be created
+		* @return array the 'step' could be 'in progress' (a process is still running), 'nothing' (no zip is being zipped) or 'to be completed' (and the 'name_zip' will be the name of the zip file being zipped)
+		*/
+		
+		function is_inProgress($path) {
+			if (is_file($path."/in_progress")) {
+				$timestart = @file_get_contents($path."/in_progress")  ;
+				$timeprocess = time() - (int)$timestart ; 
+				// We ensure that the process has not been started a too long time ago
+				if ($timeprocess<200) {
+					return array("step"=>"in progress") ; 
+				}
+				
+			} 
+			
+			// We search for a tmp file
+			$files = scandir($path) ;
+			foreach ($files as $f) {
+				if (preg_match("/zip[.]tmp$/i", $f)) {
+					$name_file = str_replace(".zip.tmp", ".zip",$f) ; 
+					return array("step"=>"to be completed", 'name_zip' => $name_file) ; 
+				} 
+			}
+			return array("step"=>"nothing") ; 
+		}	
+		
+		/** ====================================================================================================================================================
 		* Create the archive and split it if necessary
 		* 
 		* @param string $splitfilename the path of the zip file to create
@@ -99,9 +128,9 @@ if (!class_exists("SL_Zip")) {
 		*/
 		
 		function createZip($splitfilename, $chunk_size=1000000000000000, $maxExecutionTime=0) {
-			$zipfile_comment = "Compressed/Splitted by PHP EasyZIP";
+			$zipfile_comment = "Compressed/Splitted by the SL framework (SedLex)";
 			
-			if ($chunk_size==1000000000000000)
+			if ($chunk_size!=1000000000000000)
 				$splitted = true;
 			else
 				$splitted = false;
@@ -115,16 +144,31 @@ if (!class_exists("SL_Zip")) {
 			$nbentry = 0 ; 
 			$file_headers = "" ; 
 			$data_segments = "" ; 
+			$data_segments_len = 0 ; 
 			
+			// We check that no process is running
+			if (is_file(dirname($splitfilename)."/in_progress")) {
+				$timestart = @file_get_contents(dirname($splitfilename)."/in_progress")  ;
+				$timeprocess = time() - (int)$timestart ; 
+				// We ensure that the process has not been started a too long time ago
+				if ($timeprocess<200) {
+					return array('finished'=>false, 'error' => sprintf(__("An other process is still running (it runs for %s seconds)", "SL_framework"), $timeprocess)) ; 
+				}
+			}
+			// We create a file with the time inside to indicate that this process is doing something
+			@file_put_contents(dirname($splitfilename)."/in_progress", time()) ; 
+				
 			// We look if the .tmp file exists, if so, it means that we have to restart the zip process where it stopped
 			if (is_file($splitfilename.".tmp")) {
+				// We retrieve the process
 				$content = @file_get_contents($splitfilename.".tmp") ; 
 				@unlink($splitfilename.".tmp") ; 
-				list($nbentry, $pathToReturn, $split_offset, $old_offset, $disk_number, $this->filelist, $data_segments, $file_headers) = unserialize($content) ; 
+				list($data_segments_len, $nbentry, $pathToReturn, $split_offset, $old_offset, $disk_number, $this->filelist, $this->addpath, $this->removepath) = unserialize($content) ; 
 			}
-			
-
-			
+			if (!is_file($splitfilename.".data_segment.tmp")) {
+				@file_put_contents($splitfilename.".data_segment.tmp" ,$split_signature) ; 
+			}
+				
 			// We create the zip file
 			foreach($this->filelist as $k => $filename) {
 			
@@ -135,8 +179,14 @@ if (!class_exists("SL_Zip")) {
 						// We remove the file already inserted in the zip
 						$this->filelist =  array_slice($this->filelist,$k);
 						// We save the content on the disk
-						@file_put_contents($splitfilename.".tmp" ,serialize(array($nbentry, $pathToReturn, $split_offset, $old_offset, $disk_number, $this->filelist, $data_segments, $file_headers))) ; 
-						return  array('finished'=>false, 'nb_to_finished' => count($this->filelist), 'nb_finished' => ($nbentry), 'path'=>$pathToReturn) ; 
+						@file_put_contents($splitfilename.".tmp" ,serialize(array($data_segments_len, $nbentry, $pathToReturn, $split_offset, $old_offset, $disk_number, $this->filelist, $this->addpath, $this->removepath))) ; 
+						@file_put_contents($splitfilename.".data_segment.tmp" ,$data_segments, FILE_APPEND) ; 
+						@file_put_contents($splitfilename.".file_headers.tmp" ,$file_headers, FILE_APPEND) ; 
+						
+						// we inform that the process is finished
+						@unlink(dirname($splitfilename)."/in_progress") ; 
+						
+						return  array('finished'=>false, 'nb_to_finished' => count($this->filelist), 'nb_finished' => ($nbentry)) ; 
 					}
 				}
 				
@@ -183,19 +233,20 @@ if (!class_exists("SL_Zip")) {
 				$crc_32 = pack('V', crc32($filedata)); //  4 bytes crc_32
 				$compressed_size = pack('V', strlen($compressed_filedata));// 4 bytes compressed_size
 				$uncompressed_size = pack('V', strlen($filedata));//4 bytes uncompressed_size
-				$filename_length = pack('v', strlen($this->addPath.str_replace($this->removePath, "", $filename)));// 2 bytes filename_length
+				$filename_length = pack('v', strlen(str_replace("//", "/", $this->addPath.str_replace($this->removePath, "", $filename))));// 2 bytes filename_length
 				$extra_field_length = pack('v', 0);  //2 bytes extra_field_length
 				
-				$local_file_header = $local_file_header_signature . $version_needed_to_extract . $general_purpose_bit_flag .$compression_method .$last_mod_file_time .$last_mod_file_date .$crc_32 .$compressed_size .$uncompressed_size .$filename_length .$extra_field_length . $this->addPath.str_replace($this->removePath, "", $filename);
+				$local_file_header = $local_file_header_signature . $version_needed_to_extract . $general_purpose_bit_flag .$compression_method .$last_mod_file_time .$last_mod_file_date .$crc_32 .$compressed_size .$uncompressed_size .$filename_length .$extra_field_length . str_replace("//", "/", $this->addPath.str_replace($this->removePath, "", $filename));
 								
 				//Set Data Descriptor
 				$data_descriptor =  $crc_32.$compressed_size . $uncompressed_size;          //4+4+4 bytes
 								
 				//Set Data Segment
 				$data_segments .=     $local_file_header . $compressed_filedata . $data_descriptor; 
+				$data_segments_len += strlen($local_file_header . $compressed_filedata . $data_descriptor) ; 
 				
 				//Set File Header
-				$new_offset        = strlen( $split_signature . $data_segments );
+				$new_offset        		= strlen( $split_signature ) + $data_segments_len ;
 				$central_file_header_signature  = "\x50\x4b\x01\x02";//4 bytes  (0x02014b50)
 				$version_made_by                = pack('v', 0);  //2 bytes
 				$file_comment_length            = pack('v', 0);  //2 bytes
@@ -211,13 +262,21 @@ if (!class_exists("SL_Zip")) {
 					$old_offset = $new_offset;
 				}
 			
-				$file_headers .= $central_file_header_signature . $version_made_by . $version_needed_to_extract . $general_purpose_bit_flag . $compression_method . $last_mod_file_time . $last_mod_file_date . $crc_32 .$compressed_size .$uncompressed_size .$filename_length .$extra_field_length . $file_comment_length .  $disk_number_start . $internal_file_attributes . $external_file_attributes . $relative_offset_local_header . $this->addPath.str_replace($this->removePath, "", $filename);
+				$file_headers .= $central_file_header_signature . $version_made_by . $version_needed_to_extract . $general_purpose_bit_flag . $compression_method . $last_mod_file_time . $last_mod_file_date . $crc_32 .$compressed_size .$uncompressed_size .$filename_length .$extra_field_length . $file_comment_length .  $disk_number_start . $internal_file_attributes . $external_file_attributes . $relative_offset_local_header . str_replace("//", "/", $this->addPath.str_replace($this->removePath, "", $filename));
 				
 			}
+			
+			// We complete the tmp files with current content
+			@file_put_contents($splitfilename.".data_segment.tmp" ,$data_segments, FILE_APPEND) ; 
+			@file_put_contents($splitfilename.".file_headers.tmp" ,$file_headers, FILE_APPEND) ; 
 						
-			// We finalyze
+			// We retrieve the file header
+			$file_headers = @file_get_contents($splitfilename.".file_headers.tmp") ; 
+			@unlink($splitfilename.".file_headers.tmp") ; 
+			
+			// We finalize
 			if($splitted) {
-				$data_len = strlen($split_signature . $data_segments . $file_headers);
+				$data_len = strlen($split_signature) + $data_segments_len + strlen($file_headers);
 				$last_chunk_len = $data_len - floor($data_len / $chunk_size) * $chunk_size;
 				$old_offset = $last_chunk_len - strlen($file_headers);
 			}
@@ -232,27 +291,41 @@ if (!class_exists("SL_Zip")) {
 			$zipfile_comment_length       = pack('v', strlen($zipfile_comment));//2 bytes
 			$endCentralDirectory  = $end_central_dir_signature . $number_this_disk . $number_disk_start . $total_number_entries . $total_number_entries_central . $size_central_directory . $offset_start_central . $zipfile_comment_length . $zipfile_comment; 
 		
-			$zip = $split_signature . $data_segments . $file_headers . $endCentralDirectory;
+			// We complete the data segments file
+			@file_put_contents($splitfilename.".data_segment.tmp" , $file_headers. $endCentralDirectory, FILE_APPEND) ; 
 			
 			// We split the zip file
-			$j = 0 ; 
-			for ($i = 0; $i < strlen($zip); $i += $chunk_size) {
-				$j++ ; 
-				$out = substr($zip, $i, $chunk_size);
-				
-				if($i+$chunk_size < strlen($zip) ) {
-				
-					$sfilename = basename ($splitfilename,".zip"); 
-					$path = str_replace(basename ($splitfilename), "", $splitfilename) ; 
-					$sfilename = $path . $sfilename . ".z" . sprintf("%02d",$j);
-	
-				} else {
-					$sfilename = $splitfilename;
+			$fp = fopen($splitfilename.".data_segment.tmp", 'rb') ; 
+			if ($fp) {
+				$j = 0 ; 
+				for ($i = 0; $i < strlen($split_signature) + $data_segments_len + strlen($file_headers.$endCentralDirectory) ; $i += $chunk_size) {
+					
+					$j++ ; 
+					$out = fread($fp, $chunk_size) ; 
+					
+					// Select the correct name of the file
+					if( $i+$chunk_size < strlen($split_signature) + $data_segments_len + strlen($file_headers.$endCentralDirectory) ) {
+						$sfilename = basename ($splitfilename,".zip"); 
+						$path = str_replace(basename ($splitfilename), "", $splitfilename) ; 
+						$sfilename = $path . $sfilename . ".z" . sprintf("%02d",$j);
+					} else {
+						$sfilename = $splitfilename;
+					}
+					
+					$pathToReturn[] = $sfilename ; 
+					@file_put_contents($sfilename, $out);
 				}
-				$pathToReturn[] = $sfilename ; 
-				$fp = file_put_contents($sfilename, $out);
+				@unlink($splitfilename.".data_segment.tmp") ; 
+				// we inform that the process is finished
+				@unlink(dirname($splitfilename)."/in_progress") ; 
+				fclose($fp) ; 
+				return array('finished'=>true, 'nb_files'=>$nbentry , 'path'=>$pathToReturn) ; 
+			} else {
+				// we inform that the process is finished
+				@unlink(dirname($splitfilename)."/in_progress") ; 
+				@unlink($splitfilename.".data_segment.tmp") ; 
+				return array('finished'=>true, 'error' => 'Cannot open the file') ; 
 			}
-			return array('finished'=>true, 'nb_files'=>$nbentry , 'path'=>$pathToReturn) ; 
 		}
 	} 
 }

@@ -92,32 +92,17 @@ msgid "Parameters"
 msgstr ""
 
 #: favicon-switcher.php:290
-#: core/templates/my-plugin.php:227
 #@ favicon_switcher
 msgid "Manage translations"
 msgstr ""
 
-#: favicon-switcher.php:293
-#: core/templates/my-plugin.php:230
-#@ favicon_switcher
-msgid "This form is an easy way to contact the author and to discuss issues / incompatibilities / etc."
-msgstr ""
-
-#: favicon-switcher.php:297
-#: core/templates/my-plugin.php:234
+#: favicon-switcher.php:296
 #@ favicon_switcher
 msgid "Give feedback"
 msgstr ""
 
-#: favicon-switcher.php:300
-#: core/templates/my-plugin.php:237
+#: favicon-switcher.php:301
 #@ favicon_switcher
-msgid "Here is the plugins developped by the author:"
-msgstr ""
-
-#: favicon-switcher.php:303
-#: core/templates/my-plugin.php:243
-#@ favicon_switcher
-msgid "Other possible plugins"
+msgid "Other plugins"
 msgstr ""
 

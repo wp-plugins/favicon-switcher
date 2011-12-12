@@ -41,6 +41,7 @@ if (!class_exists('pluginSedLex')) {
 	require_once($url.'core/parameters.class.php') ; 
 	require_once($url.'core/phpdoc.class.php') ; 
 	require_once($url.'core/popup.class.php') ; 
+	require_once($url.'core/progress_bar.class.php') ; 
 	require_once($url.'core/translation.class.php') ; 
 	require_once($url.'core/text_diff.class.php') ; 
 	require_once($url.'core/svn.class.php') ; 
