@@ -52,6 +52,9 @@ Moreover, all the plugins developped with this framework is able to use astonish
 
 == Changelog ==
 
+= 1.0.7 =
+* Correction of a path bug
+
 = 1.0.6 =
 * Improve the English text thanks to Rene 
 
@@ -77,4 +80,4 @@ Moreover, all the plugins developped with this framework is able to use astonish
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:638fec09ddb4769cb737573440c35ec5
+InfoVersion:795e9901b29ae48a8a8d600480b6f982

@@ -2,7 +2,7 @@
 /**
 Plugin Name: FavIcon Switcher
 Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>This plugin is under GPL licence. </p>
-Version: 1.0.6
+Version: 1.0.7
 Framework: SL_Framework
 Author: SedLex
 Author Email: sedlex@sedlex.fr
@@ -173,7 +173,7 @@ class favicon_switcher extends pluginSedLex {
 		<?php
 		
 			// On verifie que les droits sont corrects
-			$this->check_folder_rights( array(WP_CONTENT_DIR."/sedlex/favicon/") ) ; 
+			$this->check_folder_rights( array(array(WP_CONTENT_DIR."/sedlex/favicon/", "rwx")) ) ; 
 			
 			//==========================================================================================
 			//
