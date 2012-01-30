@@ -1,41 +1,47 @@
 === FavIcon Switcher ===
 
-Contributors: SedLex
 Author: SedLex
-Author URI: http://www.sedlex.fr
+Contributors: SedLex
+Author URI: http://www.sedlex.fr/
 Plugin URI: http://wordpress.org/extend/plugins/favicon-switcher/
-Tags: plugin, favicon, multiple
+Tags: favicon, icon, favorite
 Requires at least: 3.0
-Tested up to: 3.2
+Tested up to: 3.3.1
 Stable tag: trunk
 
-This plugin enables multiple favicon based on URL match rules
+This plugin enables multiple favicon based on URL match rules. 
 
 == Description ==
 
-This plugin enables multiple favicon based on URL match rules
+This plugin enables multiple favicon based on URL match rules. 
 
-= Localizations =
+For instance, you may configure that all the page with the word Â« receipices Â» or Â« important Â» have a specific favicon.
 
-* Ukrainian translation (by BilousovYuriu)
-* Polish translation (by Pablo)
-* Hungarian translation (by Metoyou)
-* French translation (by me)
+You may configure up to three favicon.
 
-= Features of the framework = 
+This plugin is under GPL licence. 
 
-This plugin use SL framework.
+= Localization =
 
-You may translate this plugin with an embedded feature which is very easy to use by any end-users (without any external tools / knowledge).
+* English (United States), default language
+* French (France) translation provided by SedLex
+* Hungarian (Hungary) translation provided by Metoyou
+* Polish (Poland) translation provided by pablo
+* Portuguese (Brazil) translation provided by LeninhaLima
+* Ukrainian (Ukraine) translation provided by BilousovYuriu
 
-You may also create a new plugin. You will download, from the plugin, an "hello World" plugin: You just have to fill the blank and follow the comments.
+= Features of the framework =
 
-Moreover, all the plugins developped with this framework is able to use astonishing tools, such as :
+This plugin uses the SL framework. This framework eases the creation of new plugins by providing incredible tools and frames.
 
-* embedded SVN client (subversion) to easily commit/update the plugin in wordpress.org repository ; 
-* detailled documentation of all available classes and methodes ; 
-* updating the core with a single click ; 
+For instance, a new created plugin comes with
+
+* A translation interface to simplify the localization of the text of the plugin ; 
+* An embedded SVN client (subversion) to easily commit/update the plugin in wordpress.org repository ; 
+* A detailled documentation of all available classes and methodes ; 
 * etc.
+
+Have fun !
 
 == Installation ==
 
@@ -51,6 +57,12 @@ Moreover, all the plugins developped with this framework is able to use astonish
 2. The ICO in the tabs of the web browser
 
 == Changelog ==
+
+= 1.1.0 =
+* Major release of the framework
+
+= 1.0.8 =
+* Portuguese translation (by LeninhaLima)
 
 = 1.0.7 =
 * Correction of a path bug
@@ -80,4 +92,4 @@ Moreover, all the plugins developped with this framework is able to use astonish
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:795e9901b29ae48a8a8d600480b6f982
+InfoVersion:adaaaa9b72d9a6aaaef378f9d71481de

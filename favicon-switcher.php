@@ -1,8 +1,9 @@
 <?php
 /**
 Plugin Name: FavIcon Switcher
-Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>This plugin is under GPL licence. </p>
-Version: 1.0.7
+Plugin Tag: favicon, icon, favorite
+Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>For instance, you may configure that all the page with the word "<code>receipices</code>" or "<code>important</code>" have a specific favicon.</p><p>You may configure up to three favicon.</p><p>This plugin is under GPL licence. </p>
+Version: 1.1.0
 Framework: SL_Framework
 Author: SedLex
 Author Email: sedlex@sedlex.fr
