@@ -15,15 +15,20 @@ This plugin enables multiple favicon based on URL match rules.
 
 This plugin enables multiple favicon based on URL match rules. 
 
-For instance, you may configure that all the page with the word Â« receipices Â» or Â« important Â» have a specific favicon.
+For instance, you may configure that all the page with the word "receipices" or "important" have a specific favicon.
 
-You may configure up to three favicon.
+You may configure as much favicons you want without restriction.
 
-This plugin is under GPL licence. 
+This plugin is under GPL licence.
+
+= Multisite - Wordpress MU =
+
+This plugin is compatible with Multi-Site installation.
 
 = Localization =
 
 * English (United States), default language
+* Spanish (Spain) translation provided by Diuska
 * French (France) translation provided by SedLex
 * Hungarian (Hungary) translation provided by Metoyou
 * Polish (Poland) translation provided by pablo
@@ -58,28 +63,20 @@ Have fun !
 
 == Changelog ==
 
+= 1.2.0 =
+* Multi-site support
+* There is no more limitation in the number of favicons.
+
 = 1.1.0 =
 * Major release of the framework
 
-= 1.0.8 =
+= 1.0.2 -&gt; 1.0.8 =
 * Portuguese translation (by LeninhaLima)
-
-= 1.0.7 =
 * Correction of a path bug
-
-= 1.0.6 =
 * Improve the English text thanks to Rene 
-
-= 1.0.5 =
 * Ukrainian translation (by BilousovYuriu)
-
-= 1.0.4 =
 * Polish translation (by Pablo)
-
-= 1.0.3 =
 * Hungarian translation (by Metoyou)
-
-= 1.0.2 =
 * Bug with screenshots
 
 = 1.0.1 =
@@ -92,4 +89,4 @@ Have fun !
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:adaaaa9b72d9a6aaaef378f9d71481de
+InfoVersion:bc7384fdb9a34414ba4fa5e6ca8e438a

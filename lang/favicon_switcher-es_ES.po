@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Generated: SL Framework (http://www.sedlex.fr)\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-02-23T09:20:13+00:00\n"
+"Last-Translator: Diuska <http://www.contrabarra.es>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: Spain\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+
+msgid "This plugin enables multiple favicon for your website"
+msgstr "Este plugin permite múltiples favicon para su sitio web"
+
+msgid "Default Favicon"
+msgstr "Favicon por defecto"
+
+msgid "The default favicon image:"
+msgstr "La imagen de favicon por defecto"
+
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr "La multiresolución ICO ha sido generada y almacenada %shere%s"
+
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr "Ningún ICO ha sido generado porque este archivo es incompatible... ¡Lo sentimos!"
+
+msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
+msgstr "Puedes añadir ICO, PNG, GIF, JPG y BMP. Será convertido en una multiresolución ico."
+
+msgid "The multiresolution ICO is stored %shere%s"
+msgstr "La multiresolución ICO se a almacenado %shere%s"
+
+msgid "1st customized Favicon"
+msgstr "1er Favicon personalizado"
+
+msgid "The 1st customized favicon image:"
+msgstr "La 1ª imagen ICO personalizada"
+
+msgid "The 1st regexp rule:"
+msgstr "La 1ª regla de regexp"
+
+msgid "For instance, %s to have a specific icon for admin page"
+msgstr "Por ejemplo, %s para tener un icono específico para una página de administración"
+
+msgid "2nd customized Favicon"
+msgstr "2º Favicon personalizado"
+
+msgid "The 2nd customized favicon image:"
+msgstr "La 2ª imagen ICO personalizada"
+
+msgid "The 2nd regexp rule:"
+msgstr "La 2ª regla de regexp"
+
+msgid "For instance, %s to have a specific icon for the category with name %s"
+msgstr "Por ejemplo, %s para tener un icono específico para la categoría con el nombre %s"
+
+msgid "Parameters"
+msgstr "Parámetros"
+
+msgid "Manage translations"
+msgstr "Traducciones"
+
+msgid "Give feedback"
+msgstr "Hacer feedback"
+
+msgid "Other plugins"
+msgstr "Otros plugins"
+
+msgid "The file %s cannot be deleted. You should have a problem with file permissions or security restrictions."
+msgstr ""
+

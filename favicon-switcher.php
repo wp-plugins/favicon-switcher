@@ -2,8 +2,8 @@
 /**
 Plugin Name: FavIcon Switcher
 Plugin Tag: favicon, icon, favorite
-Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>For instance, you may configure that all the page with the word "<code>receipices</code>" or "<code>important</code>" have a specific favicon.</p><p>You may configure up to three favicon.</p><p>This plugin is under GPL licence. </p>
-Version: 1.1.0
+Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>For instance, you may configure that all the page with the word "<code>receipices</code>" or "<code>important</code>" have a specific favicon.</p><p>You may configure as much favicons you want without restriction.</p><p>This plugin is under GPL licence.</p>
+Version: 1.2.0
 Framework: SL_Framework
 Author: SedLex
 Author Email: sedlex@sedlex.fr
@@ -38,7 +38,7 @@ class favicon_switcher extends pluginSedLex {
 		$this->pluginName = 'FavIcon Switcher' ; 
 		
 		// The structure of the SQL table if needed (for instance, 'id_post mediumint(9) NOT NULL, short_url TEXT DEFAULT '', UNIQUE KEY id_post (id_post)') 
-		$this->tableSQL = '' ; 
+		$this->tableSQL = "" ; 
 		// The name of the SQL table (Do no modify except if you know what you do)
 		$this->table_name = $wpdb->prefix . "pluginSL_" . get_class() ; 
 
@@ -56,14 +56,14 @@ class favicon_switcher extends pluginSedLex {
 		
 		add_action('wp_print_scripts', array( $this, 'add_favicon'));
 
-		
 		// Important variables initialisation (Do not modify)
 		$this->path = __FILE__ ; 
 		$this->pluginID = get_class() ; 
 		
 		// activation and deactivation functions (Do not modify)
 		register_activation_hook(__FILE__, array($this,'install'));
-		register_deactivation_hook(__FILE__, array($this,'uninstall'));
+		register_deactivation_hook(__FILE__, array($this,'deactivate'));
+		register_uninstall_hook(__FILE__, array($this,'uninstall_removedata'));
 	}
 
 	/**====================================================================================================================================================
@@ -75,7 +75,16 @@ class favicon_switcher extends pluginSedLex {
 	*/
 	
 	public function _update() {
-		
+		if (count($this->get_param('list_of_favicon'))==0) {
+			$result = array() ; 
+			if ($this->get_param('custom1_rule')!="") {
+				$result[] = 1 ; 
+			}
+			if ($this->get_param('custom2_rule')!="") {
+				$result[] = 2 ; 
+			}
+			$this->set_param('list_of_favicon', $result) ; 
+		}
 	}
 	
 	/**====================================================================================================================================================
@@ -99,18 +108,23 @@ class favicon_switcher extends pluginSedLex {
 		$upload_dir = wp_upload_dir();
 		$url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 		
-		if (($this->get_param('custom1_rule') != "") && (preg_match("/".$this->get_param('custom1_rule')."/i", $url)) && ($this->get_param('custom1_favicon') != $this->get_default_option('custom1_favicon')) ) {
-			$path = $upload_dir["baseurl"].$this->get_param('custom1_favicon')  ; 
-			echo '<link rel="icon" href="'.$path.'" type="image/x-icon">' ; 
-			echo '<link rel="shortcut icon" href="'.$path.'" type="image/x-icon">' ; 		
-		} else if (($this->get_param('custom2_rule')!="") && (preg_match("/".$this->get_param('custom2_rule')."/i", $url)) && ($this->get_param('custom2_favicon') != $this->get_default_option('custom2_favicon'))) {
+		// Search for the right icon
 		
-		} else {
-			if ($this->get_param('default_favicon') != $this->get_default_option('default_favicon')) {
-				$path = $upload_dir["baseurl"].$this->get_param('default_favicon')  ; 
+		foreach ($this->get_param('list_of_favicon') as $id) {
+			if (($this->get_param('custom'.$id.'_rule') != "") && (preg_match("/".$this->get_param('custom'.$id.'_rule')."/i", $url)) && ($this->get_param('custom'.$id.'_favicon') != $this->get_default_option('custom'.$id.'_favicon')) ) {
+				$path = $upload_dir["baseurl"].$this->get_param('custom'.$id.'_favicon')  ; 
 				echo '<link rel="icon" href="'.$path.'" type="image/x-icon">' ; 
-				echo '<link rel="shortcut icon" href="'.$path.'" type="image/x-icon">' ; 
-			}
+				echo '<link rel="shortcut icon" href="'.$path.'" type="image/x-icon">' ; 	
+				return ; 	
+			}			
+		}
+		
+		// Default icon
+		
+		if ($this->get_param('default_favicon') != $this->get_default_option('default_favicon')) {
+			$path = $upload_dir["baseurl"].$this->get_param('default_favicon')  ; 
+			echo '<link rel="icon" href="'.$path.'" type="image/x-icon">' ; 
+			echo '<link rel="shortcut icon" href="'.$path.'" type="image/x-icon">' ; 
 		}
 	}
 	
@@ -144,10 +158,15 @@ class favicon_switcher extends pluginSedLex {
 		switch ($option) {
 			// Alternative default return values (Please modify)
 			case 'default_favicon' 		: return "[file]/favicon/" 		; break ; 
-			case 'custom1_favicon' 		: return "[file]/favicon/" 		; break ; 
-			case 'custom1_rule' 		: return "" 		; break ; 
-			case 'custom2_favicon' 		: return "[file]/favicon/" 		; break ; 
-			case 'custom2_rule' 		: return "" 		; break ; 
+			case 'list_of_favicon' 		: return array() 		; break ; 
+		}
+		
+		// Use a trick to match any number
+		if (preg_match("/custom[0-9]*_favicon/", $option)) {
+			return "[file]/favicon/" ; 
+		}
+		if (preg_match("/custom[0-9]*_rule/", $option)) {
+			return "" ; 
 		}
 		return null ;
 	}
@@ -188,98 +207,126 @@ class favicon_switcher extends pluginSedLex {
 				$params = new parametersSedLex($this, 'tab-parameters') ; 
 				
 				$params->add_title(sprintf(__('Default Favicon',$this->pluginID), $title)) ; 
-				$old_default_favicon = $this->get_param('default_favicon') ; 
+				$old_favicon = $this->get_param('default_favicon') ; 
+				$new_favicon = $params->get_new_value('default_favicon') ; 
+				
 				$params->add_param('default_favicon', __('The default favicon image:',$this->pluginID)) ; 
-				$new_default_favicon = $this->get_param('default_favicon') ; 
-				if ($old_default_favicon != $new_default_favicon) {
-					if ($this->get_param('default_favicon') != $this->get_default_option('default_favicon')) {
-						$upload_dir = wp_upload_dir();
-						$path = $upload_dir["basedir"].$this->get_param('default_favicon')  ; 
-						$ico = new icoTransform() ; 
-						$ret = $ico->loadImage($path) ; 
-						if ($ret)
-							$ret = $ico->transformToICO($path.".ico") ; 
-						if ($ret) {
-							$params->add_comment(sprintf(__('The multiresolution ICO has been generated and is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$this->get_param('default_favicon').".ico'>", "</a>")) ; 
-						} else {
-							$params->add_comment(__('No ICO has been generated because this file is incompatible... Sorry !',$this->pluginID)) ; 
-						}
+				
+				// There is an error
+				if (is_array($new_favicon) && ($new_favicon[0]=='error')) {
+					$params->add_comment(__('An error occurred!',$this->pluginID)) ; 
+				
+				// There is no favicon at all
+				} else if ($new_favicon == $this->get_default_option('default_favicon')) {
+					$params->add_comment(__('You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file.',$this->pluginID)) ; 
+				
+				// There is no update of the favicon
+				} else if (($new_favicon == $old_favicon)||($new_favicon == null)) {
+					$upload_dir = wp_upload_dir();
+					$path = $upload_dir["basedir"].$old_favicon  ; 
+					if (file_exists($path.".ico")) {
+						$params->add_comment(sprintf(__('The multiresolution ICO is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$old_favicon.".ico'>", "</a>")) ; 
 					} else {
 						$params->add_comment(__('You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file.',$this->pluginID)) ; 
 					}
-				} else {
+				
+				// There is an update
+				} else {				
 					$upload_dir = wp_upload_dir();
-					$path = $upload_dir["basedir"].$this->get_param('default_favicon')  ; 
-					if (file_exists($path.".ico")) {
-						$params->add_comment(sprintf(__('The multiresolution ICO is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$this->get_param('default_favicon').".ico'>", "</a>")) ; 
+					$path = $upload_dir["basedir"].$new_favicon  ; 
+					$ico = new icoTransform() ; 
+					$ret = $ico->loadImage($path) ; 
+					if ($ret) {
+						$ret = $ico->transformToICO($path.".ico") ; 
+					}
+					if ($ret) {
+						$params->add_comment(sprintf(__('The multiresolution ICO has been generated and is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$new_favicon.".ico'>", "</a>")) ; 
 					} else {
 						$params->add_comment(__('No ICO has been generated because this file is incompatible... Sorry !',$this->pluginID)) ; 
 					}
+				} 
+				
+				// We check whether a new entry is deleted
+				$array = $this->get_param('list_of_favicon') ; 
+				foreach ($array as $j=>$id) {
+					$new_rule = $params->get_new_value('custom'.$id.'_rule') ; 
+					if (($new_rule!==null)&&($new_rule=="")) {
+						unset($array[$j]) ; 
+						$_POST["delete_".'custom'.$id.'_favicon'] = 1 ; 
+					}
+				}
+				$this->set_param('list_of_favicon', array_values($array)) ; 
+				
+				// We check whether a new entry is set
+				$array = $this->get_param('list_of_favicon') ; 
+				$id = $array[count($array)-1]+1 ; 
+				$new_rule = $params->get_new_value('custom'.$id.'_rule') ; 
+				if (($new_rule!==null)&&($new_rule!="")) {
+					$array[] = $id ; 
+					$this->set_param('list_of_favicon', $array) ; 
 				}
 				
-				$params->add_title(sprintf(__('1st customized Favicon',$this->pluginID), $title)) ; 
-				$old_default_favicon = $this->get_param('custom1_favicon') ; 
-				$params->add_param('custom1_favicon', __('The 1st customized favicon image:',$this->pluginID)) ; 
-				$new_default_favicon = $this->get_param('custom1_favicon') ; 
-				if ($old_default_favicon != $new_default_favicon) {
-					if ($this->get_param('custom1_favicon') != $this->get_default_option('custom1_favicon')) {
-						$upload_dir = wp_upload_dir();
-						$path = $upload_dir["basedir"].$this->get_param('custom1_favicon')  ; 
-						$ico = new icoTransform() ; 
-						$ret = $ico->loadImage($path) ; 
-						if ($ret)
-							$ret = $ico->transformToICO($path.".ico") ; 
-						if ($ret) {
-							$params->add_comment(sprintf(__('The multiresolution ICO has been generated and is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$this->get_param('custom1_favicon').".ico'>", "</a>")) ; 
-						} else {
-							$params->add_comment(__('No ICO has been generated because this file is incompatible... Sorry !',$this->pluginID)) ; 
-						}
-					} else {
-						$params->add_comment(__('You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file.',$this->pluginID)) ; 
-					}
-				} else {
-					$upload_dir = wp_upload_dir();
-					$path = $upload_dir["basedir"].$this->get_param('custom1_favicon')  ; 
-					if (file_exists($path.".ico")) {
-						$params->add_comment(sprintf(__('The multiresolution ICO is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$this->get_param('custom1_favicon').".ico'>", "</a>")) ; 
-					} else {
-						$params->add_comment(__('No ICO has been generated because this file is incompatible... Sorry !',$this->pluginID)) ; 
-					}
-				}
-				$params->add_param('custom1_rule', __('The 1st regexp rule:',$this->pluginID)) ; 
-				$params->add_comment(sprintf(__('For instance, %s to have a specific icon for admin page',$this->pluginID), "<code>.*\/wp-admin\/.*</code>")) ; 
+				
+				// On print all the stored icons
+				
+				$i = 0 ; 
+				foreach ($this->get_param('list_of_favicon') as $id) {
+					$i ++ ; 
+					$params->add_title(sprintf(__('Custom Favicon n°%s',$this->pluginID), $i)) ; 
+					$params->add_param('custom'.$id.'_rule', sprintf(__('The regexp rule for the image n°%s:',$this->pluginID), $i)) ; 
+					$params->add_comment(sprintf(__('For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles',$this->pluginID), "<code>.*\/wp-admin\/.*</code>", "<code>.*important.*</code>")) ; 
+					$params->add_comment(__('Please note that if you delete the regexp, these entry will be deleted',$this->pluginID)) ; 
 
-				$params->add_title(sprintf(__('2nd customized Favicon',$this->pluginID), $title)) ; 
-				$old_default_favicon = $this->get_param('custom2_favicon') ; 
-				$params->add_param('custom2_favicon', __('The 2nd customized favicon image:',$this->pluginID)) ; 
-				$new_default_favicon = $this->get_param('custom2_favicon') ; 
-				if ($old_default_favicon != $new_default_favicon) {
-					if ($this->get_param('custom2_favicon') != $this->get_default_option('custom2_favicon')) {
+					$old_favicon = $this->get_param('custom'.$id.'_favicon') ; 
+					$new_favicon = $params->get_new_value('custom'.$id.'_favicon') ; 
+					
+					$params->add_param('custom'.$id.'_favicon', sprintf(__('Custom favicon image n°%s:',$this->pluginID), $i)) ; 
+					
+					// There is an error
+					if (is_array($new_favicon) && ($new_favicon[0]=='error')) {
+						$params->add_comment(__('An error occurred!',$this->pluginID)) ; 
+					
+					// There is no favicon at all
+					} else if ($new_favicon == $this->get_default_option('custom'.$id.'_favicon')) {
+						$params->add_comment(__('You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file.',$this->pluginID)) ; 
+					
+					// There is no update of the favicon
+					} else if (($new_favicon == $old_favicon)||($new_favicon == null)) {
 						$upload_dir = wp_upload_dir();
-						$path = $upload_dir["basedir"].$this->get_param('custom2_favicon')  ; 
+						$path = $upload_dir["basedir"].$old_favicon  ; 
+						if (file_exists($path.".ico")) {
+							$params->add_comment(sprintf(__('The multiresolution ICO is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$old_favicon.".ico'>", "</a>")) ; 
+						} else {
+							$params->add_comment(__('You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file.',$this->pluginID)) ; 
+						}
+					
+					// There is an update
+					} else {				
+						$upload_dir = wp_upload_dir();
+						$path = $upload_dir["basedir"].$new_favicon  ; 
 						$ico = new icoTransform() ; 
 						$ret = $ico->loadImage($path) ; 
-						if ($ret)
-							$ret = $ico->transformToICO($path.".ico") ; 
 						if ($ret) {
-							$params->add_comment(sprintf(__('The multiresolution ICO has been generated and is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$this->get_param('custom2_favicon').".ico'>", "</a>")) ; 
+							$ret = $ico->transformToICO($path.".ico") ; 
+						}
+						if ($ret) {
+							$params->add_comment(sprintf(__('The multiresolution ICO has been generated and is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$new_favicon.".ico'>", "</a>")) ; 
 						} else {
 							$params->add_comment(__('No ICO has been generated because this file is incompatible... Sorry !',$this->pluginID)) ; 
 						}
-					} else {
-						$params->add_comment(__('You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file.',$this->pluginID)) ; 
-					}
-				} else {
-					$upload_dir = wp_upload_dir();
-					$path = $upload_dir["basedir"].$this->get_param('custom2_favicon')  ; 
-					if (file_exists($path.".ico")) {
-						$params->add_comment(sprintf(__('The multiresolution ICO is stored %shere%s',$this->pluginID), "<a href='".$upload_dir["baseurl"].$this->get_param('custom2_favicon').".ico'>", "</a>")) ; 
-					} else {
-						$params->add_comment(__('No ICO has been generated because this file is incompatible... Sorry !',$this->pluginID)) ; 
-					}
+					} 
+					
 				}
-				$params->add_param('custom2_rule', __('The 2nd regexp rule:',$this->pluginID)) ; 
-				$params->add_comment(sprintf(__('For instance, %s to have a specific icon for the category with name %s',$this->pluginID), "<code>.*\/important\/.*</code>", "<code>important</code>")) ; 
+				
+				
+				// Propose to add a new image icon
+				$array = $this->get_param('list_of_favicon') ; 
+				$id = $array[count($array)-1]+1 ; 
+				$params->add_title(__('Add a new customized Favicon',$this->pluginID)) ; 
+				$params->add_param('custom'.$id.'_rule', __('The new regexp rule:',$this->pluginID)) ; 
+				$params->add_comment(sprintf(__('For instance, %s to have a specific icon for admin page',$this->pluginID), "<code>.*\/wp-admin\/.*</code>")) ; 
+				$params->add_param('custom'.$id.'_favicon', __('A new image icon:',$this->pluginID)) ; 
+				$params->add_comment(__('You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file.',$this->pluginID)) ; 
 				
 				$params->flush() ; 
 			$tabs->add_tab(__('Parameters',  $this->pluginID), ob_get_clean() , WP_PLUGIN_URL.'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__))."core/img/tab_param.png") ; 	
