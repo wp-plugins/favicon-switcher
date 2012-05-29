@@ -4,8 +4,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2011-12-12T14:27:29+00:00\n"
+"PO-Revision-Date: 2012-05-29T11:34:59+00:00\n"
 "Last-Translator: SedLex <http://www.sedlex.fr/>\n"
+"Last-Translator: wkpixearts <wkpixeartsforall@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgid "The multiresolution ICO is stored %shere%s"
 msgstr "L&#039;icône ayant une multiresolution est stockée %sici%s"
 
 msgid "1st customized Favicon"
-msgstr "1ère icône personnalisée "
+msgstr "1ère icône personnalisée"
 
 msgid "The 1st customized favicon image:"
 msgstr "L&#039;image de la 1ère icône personnalisée :"
@@ -54,7 +55,7 @@ msgid "For instance, %s to have a specific icon for admin page"
 msgstr "Par exemple, %s pour avoir une icône spécifique pour les pages d&#039;administration"
 
 msgid "2nd customized Favicon"
-msgstr "2ème icône personnalisée "
+msgstr "2ème icône personnalisée"
 
 msgid "The 2nd customized favicon image:"
 msgstr "L&#039;image de la 2ème icône personnalisée :"
@@ -72,8 +73,29 @@ msgid "Manage translations"
 msgstr "Gérer les traductions"
 
 msgid "Give feedback"
-msgstr "Donner un feedback"
+msgstr "Donner un retour d&#039;expérience"
 
 msgid "Other plugins"
-msgstr "Autres plugins"
+msgstr "Autres Extensions"
+
+msgid "An error occurred!"
+msgstr "Une erreur s&#039;est produite!"
+
+msgid "Custom Favicon n°%s"
+msgstr "FavIcon personnalisé nÂ°%s"
+
+msgid "The regexp rule for the image n°%s:"
+msgstr "La règle regexp pour l&#039;image nÂ°%s:"
+
+msgid "Custom favicon image n°%s:"
+msgstr "Personnaliser l&#039;image FavIcon  nÂ°%s:"
+
+msgid "Add a new customized Favicon"
+msgstr "Ajouter un nouvel FavIcon personnalisé"
+
+msgid "The new regexp rule:"
+msgstr "La nouvelle règle regexp:"
+
+msgid "A new image icon:"
+msgstr "Nouvelle image pour FavIcon"
 
