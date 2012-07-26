@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Generated: SL Framework (http://www.sedlex.fr)\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-07-25T23:51:54+02:00\n"
+"Last-Translator: webbuster.nl <matthijs@webbuster.nl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: Netherlands\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+
+msgid "This plugin enables multiple favicon for your website"
+msgstr "Deze plugins voegt meerdere favicons toe aan je website"
+
+msgid "Default Favicon"
+msgstr "Standaard favicon"
+
+msgid "The default favicon image:"
+msgstr "De standaard favicon afbeelding"
+
+msgid "An error occurred!"
+msgstr "Er heeft zich een fout voorgedaan!"
+
+msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
+msgstr "Je kunt ICO, PNG, GIF, JPG en BMP bestanden gebruiken, deze worden geconverteerd naar een multiresolutie ICO bestand"
+
+msgid "The multiresolution ICO is stored %shere%s"
+msgstr "Het multiresolutie bestand is %shier%s opgeslagen"
+
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr "Het multiresolutie bestand is aangemaakt en %shier%s opgeslagen"
+
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr "Er is ICObestand aangemaakt omdat het bestand incompatible is!"
+
+msgid "Custom Favicon n°%s"
+msgstr "Aangepaste favicon nÂ°%s"
+
+msgid "The regexp rule for the image n°%s:"
+msgstr "De regexp regel voor de afbeelding nÂ°%s:"
+
+msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
+msgstr "Bijvoorbeeld, %som een aparte favicon voor het Dashboard of  %s voor berichten met het woord belangrijk in de titel"
+
+msgid "Please note that if you delete the regexp, these entry will be deleted"
+msgstr "Onthoud dat als je de regexp verwijder, de hele regel word verwijderd"
+
+msgid "Custom favicon image n°%s:"
+msgstr "Aangepaste favicon nÂ°%s"
+
+msgid "Add a new customized Favicon"
+msgstr "Voeg een nieuwe aangepaste favicon toe"
+
+msgid "The new regexp rule:"
+msgstr "De nieuwe regxp regel"
+
+msgid "For instance, %s to have a specific icon for admin page"
+msgstr "Bijvoorbeeld %s om een specifieke icon the gebruiken voor het Dashboard"
+
+msgid "A new image icon:"
+msgstr "Een nieuw afbeeldings icoon"
+
+msgid "Parameters"
+msgstr "Instellingen"
+
+msgid "Manage translations"
+msgstr "Beheer vertalingen"
+
+msgid "Give feedback"
+msgstr "Geef feedback"
+
+msgid "Other plugins"
+msgstr "Andere plugins"
+
