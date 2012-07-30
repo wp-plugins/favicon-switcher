@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Generated: SL Framework (http://www.sedlex.fr)\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-07-28T07:25:08+00:00\n"
+"Last-Translator: Bumerang <pumaj@seznam.cz>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10>3 ? 2 : 1;\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: Czech Republic\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+
+msgid "This plugin enables multiple favicon for your website"
+msgstr "Tento plugin umožňuje používat více faviconů současně na vašich stránkách"
+
+msgid "Default Favicon"
+msgstr "Výchozí favicon"
+
+msgid "The default favicon image:"
+msgstr "Obrázek výchozího faviconu"
+
+msgid "An error occurred!"
+msgstr "Nastala chyba!"
+
+msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
+msgstr "Můžete vložit ICO, PNG, GIF, JPG a BMP soubory. Budou automaticky převedeny na ICO soubor s vysokým rozlišením."
+
+msgid "The multiresolution ICO is stored %shere%s"
+msgstr "ICO s vysokým rozlišení je uložen %szde%s"
+
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr "ICO s vysokým rozlišením bylo vytvořeno a je uloženo %szde%s"
+
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr "Nepodařilo se vytvořit ICO, neboť zadaný soubor není kompatabilní."
+
+msgid "Custom Favicon n°%s"
+msgstr "Uživatelský favicon"
+
+msgid "The regexp rule for the image n°%s:"
+msgstr "Regulární výraz pro obrázek nÂ°%s:"
+
+msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
+msgstr "Například %smít specifickou ikonu pro administrátorskou stránku či %s pro příspěvky s názvem, který obsahuje důležitá slova."
+
+msgid "Please note that if you delete the regexp, these entry will be deleted"
+msgstr "Pokud smažete tento regulární výraz, celý tento vstup bude smazán."
+
+msgid "Custom favicon image n°%s:"
+msgstr "Uživatelský obrázek faviconu nÂ°%s:"
+
+msgid "Add a new customized Favicon"
+msgstr "Přidat nový upravený favicon"
+
+msgid "The new regexp rule:"
+msgstr "Nový regulární výraz"
+
+msgid "For instance, %s to have a specific icon for admin page"
+msgstr "Například %s mít specifickou ikonu pro administrátorskou stránku."
+
+msgid "A new image icon:"
+msgstr "Nový obrázek ikony:"
+
+msgid "Parameters"
+msgstr "Parametry"
+
+msgid "Manage translations"
+msgstr "Spravovat překlady"
+
+msgid "Give feedback"
+msgstr "Podělte se o zkušenosti"
+
+msgid "Other plugins"
+msgstr "Další pluginy"
+

@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Generated: SL Framework (http://www.sedlex.fr)\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-07-28T11:06:59+00:00\n"
+"Last-Translator: AnatoliyNovyk <anovyk@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10>3 ? 2 : 1;\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: Russia\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+
+msgid "This plugin enables multiple favicon for your website"
+msgstr "Этот плагин позволяет использовать несколько иконок для вашего сайта"
+
+msgid "Default Favicon"
+msgstr "Иконка по умолчанию"
+
+msgid "The default favicon image:"
+msgstr "Картинка иконки по умолчанию:"
+
+msgid "An error occurred!"
+msgstr "Произошла ошибка!"
+
+msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
+msgstr "Вы можете добавить файлы ICO, PNG, GIF, JPG и BMP. Это будет преобразовано в мультиразрешение ico."
+
+msgid "The multiresolution ICO is stored %shere%s"
+msgstr "Мультиразрешение ICO сохранено %shere%s"
+
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr "Мультиразрешение ICO был сгенерирован и сохранен %shere%s"
+
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr "ICO не был сгенерирован, потому что этот файл несовместим... Извините!"
+
+msgid "Custom Favicon n°%s"
+msgstr "Пользовательская иконка nÂ°%s"
+
+msgid "The regexp rule for the image n°%s:"
+msgstr "Правило regexp для картинки nÂ°%s:"
+
+msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
+msgstr "Например, %s, чтобы иметь определенный значок для admin страницы или %s для сообщений, имеющих важное слово в заголовках"
+
+msgid "Please note that if you delete the regexp, these entry will be deleted"
+msgstr "Отметьте, что, если Вы удаляете regexp, вход будет удален"
+
+msgid "Custom favicon image n°%s:"
+msgstr "Пользовательское изображение иконки nÂ°%s:"
+
+msgid "Add a new customized Favicon"
+msgstr "Добавить новую пользовательскую иконку"
+
+msgid "The new regexp rule:"
+msgstr "Новое regexp правило:"
+
+msgid "For instance, %s to have a specific icon for admin page"
+msgstr "Например, %s чтобы иметь определенный значок для админ-страницы"
+
+msgid "A new image icon:"
+msgstr "Новая картинка иконки:"
+
+msgid "Parameters"
+msgstr "Параметры"
+
+msgid "Manage translations"
+msgstr "Управление переводами"
+
+msgid "Give feedback"
+msgstr "Оставить отзыв"
+
+msgid "Other plugins"
+msgstr "Остальные плагины"
+
