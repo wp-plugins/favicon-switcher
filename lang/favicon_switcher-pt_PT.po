@@ -4,16 +4,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-12-30T09:29:30+00:00\n"
-"Last-Translator: SedLex <http://www.sedlex.fr/>\n"
-"Last-Translator: wkpixearts <wkpixeartsforall@gmail.com>\n"
+"PO-Revision-Date: 2012-12-29T17:09:10+00:00\n"
+"Last-Translator: NunoVieira <nunovieira@nuviware.pt>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Poedit-Language: French\n"
-"X-Poedit-Country: France\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: Portugal\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;\n"
 "X-Poedit-Basepath: \n"
@@ -22,65 +21,65 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 
 msgid "This plugin enables multiple favicon for your website"
-msgstr "Le plugin active plusieurs favicon pour votre site web"
+msgstr "Este plugin permite ter múltiplos favicon no seu site"
 
 msgid "Default Favicon"
-msgstr "FavIcon par défaut"
+msgstr "Favicon por defeito"
 
 msgid "The default favicon image:"
-msgstr "L&#039;image FavIcon par défaut :"
+msgstr "Imagem do favicon por defeito:"
 
 msgid "An error occurred!"
-msgstr "Une erreur s&#039;est produite!"
+msgstr "Ocorreu um erro!"
 
 msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
-msgstr "Vous pouvez ajouter des fichiers ICO, PNG, GIF, JPG et BMP. Ils seront convertis en des fichiers multirésoltutions."
+msgstr "Você pode adicionar ficheiros ICO, PNG, GIF, JPG e BMP. Será convertido num ficheiro ICO multiresolução."
 
 msgid "The multiresolution ICO is stored %shere%s"
-msgstr "L&#039;icône ayant une multiresolution est stockée %sici%s"
+msgstr "O ficheiro ICO multiresolução foi guardado %saqui%s"
 
 msgid "The multiresolution ICO has been generated and is stored %shere%s"
-msgstr "L&#039;icône ayant une multiresolution a été générée et est stockée %sici%s"
+msgstr "O ficheiro ICO multiresolução foi gerado e foi guardado %saqui%s"
 
 msgid "No ICO has been generated because this file is incompatible... Sorry !"
-msgstr "Aucune icône n&#039;a été générée car le fichier est incompatible ... Désolé !"
+msgstr "Não foi gerado o ICO porque este ficheiro é incompatível ... Desculpe!"
 
 msgid "Custom Favicon n°%s"
-msgstr "FavIcon personnalisé n%s"
+msgstr "Favicon personalizado n.°%s"
 
 msgid "The regexp rule for the image n°%s:"
-msgstr "La règle regexp pour l&#039;image n%s:"
+msgstr "A regra da regexp para a imagem n.°%s:"
 
 msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
-msgstr ""
+msgstr "Por exemplo, %s para ter um ícone específico para a página de administração ou %s para mensagens com a palavra importante nos seus títulos"
 
 msgid "Please note that if you delete the regexp, these entry will be deleted"
-msgstr ""
+msgstr "Por favor tenha atenção que se excluir a regexp, esta entrada será excluída"
 
 msgid "Custom favicon image n°%s:"
-msgstr "Personnaliser l&#039;image FavIcon  n%s:"
+msgstr "Imagem favicon personalizada n.°%s:"
 
 msgid "Add a new customized Favicon"
-msgstr "Ajouter un nouvel FavIcon personnalisé"
+msgstr "Adicionar um novo favicon personalizado"
 
 msgid "The new regexp rule:"
-msgstr "La nouvelle règle regexp:"
+msgstr "Nova regra da regexp:"
 
 msgid "For instance, %s to have a specific icon for admin page"
-msgstr "Par exemple, %s pour avoir une icône spécifique pour les pages d&#039;administration"
+msgstr "Por exemplo, %s para ter um ícone específico para a página de administração"
 
 msgid "A new image icon:"
-msgstr "Nouvelle image pour FavIcon"
+msgstr "Novo icon de imagem:"
 
 msgid "Parameters"
-msgstr "Paramètres"
+msgstr "Parâmetros"
 
 msgid "Manage translations"
-msgstr "Gérer les traductions"
+msgstr "Gerir traduções"
 
 msgid "Give feedback"
-msgstr "Donner un retour d&#039;expérience"
+msgstr "Comentar"
 
 msgid "Other plugins"
-msgstr "Autres Extensions"
+msgstr "Outros plugins"
 

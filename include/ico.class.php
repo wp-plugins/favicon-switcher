@@ -59,15 +59,31 @@ class icoTransform {
 					$b = $argb['blue'];
 
 					if ($bpp[$key] == 32) {
-						$icXOR[$key] .= chr($b).chr($g).chr($r).chr($a);
+						if (isset($icXOR[$key])) {
+							$icXOR[$key] .= chr($b).chr($g).chr($r).chr($a);
+						} else {
+							$icXOR[$key] = chr($b).chr($g).chr($r).chr($a);
+						}
 					} elseif ($bpp[$key] == 24) {
-						$icXOR[$key] .= chr($b).chr($g).chr($r);
+						if (isset($icXOR[$key])) {
+							$icXOR[$key] .= chr($b).chr($g).chr($r);
+						} else {
+							$icXOR[$key] = chr($b).chr($g).chr($r);
+						}
 					}
 
 					if ($a < 128) {
-						@$icANDmask[$key][$y] .= '1';
+						if (isset($icANDmask[$key][$y])) {
+							$icANDmask[$key][$y] .= '1';
+						} else {
+							$icANDmask[$key][$y] = '1';
+						}
 					} else {
-						@$icANDmask[$key][$y] .= '0';
+						if (isset($icANDmask[$key][$y])) {
+							$icANDmask[$key][$y] .= '0';
+						} else {
+							$icANDmask[$key][$y] = '0';
+						}
 					}
 				}
 				// mask bits are 32-bit aligned per scanline
@@ -78,7 +94,11 @@ class icoTransform {
 			$icAND[$key] = '';
 			foreach ($icANDmask[$key] as $y => $scanlinemaskbits) {
 				for ($i = 0; $i < strlen($scanlinemaskbits); $i += 8) {
-					$icAND[$key] .= chr(bindec(str_pad(substr($scanlinemaskbits, $i, 8), 8, '0', STR_PAD_LEFT)));
+					if (isset($icAND[$key])) {
+						$icAND[$key] .= chr(bindec(str_pad(substr($scanlinemaskbits, $i, 8), 8, '0', STR_PAD_LEFT)));
+					} else {
+						$icAND[$key] = chr(bindec(str_pad(substr($scanlinemaskbits, $i, 8), 8, '0', STR_PAD_LEFT)));
+					}
 				}
 			}
 		}
@@ -137,7 +157,9 @@ class icoTransform {
 		if ($newPath=="") {
 			return $icondata ;
 		} else {
-			@unlink($newPath) ;
+			if (is_file($newPath)) {
+				unlink($newPath) ;
+			}
 			return @file_put_contents($newPath, $icondata) ;
 		}	
 	}

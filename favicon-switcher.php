@@ -3,7 +3,7 @@
 Plugin Name: FavIcon Switcher
 Plugin Tag: favicon, icon, favorite
 Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>For instance, you may configure that all the page with the word "<code>receipices</code>" or "<code>important</code>" have a specific favicon.</p><p>You may configure as much favicons you want without restriction.</p><p>This plugin is under GPL licence.</p>
-Version: 1.2.0
+Version: 1.2.1
 Framework: SL_Framework
 Author: SedLex
 Author Email: sedlex@sedlex.fr
@@ -54,8 +54,6 @@ class favicon_switcher extends pluginSedLex {
 		// Be aware that the second argument should be of the form of array($this,"the_function")
 		// For instance add_action( "the_content",  array($this,"modify_content")) : this function will call the function 'modify_content' when the content of a post is displayed
 		
-		add_action('wp_print_scripts', array( $this, 'add_favicon'));
-
 		// Important variables initialisation (Do not modify)
 		$this->path = __FILE__ ; 
 		$this->pluginID = get_class() ; 
@@ -63,7 +61,38 @@ class favicon_switcher extends pluginSedLex {
 		// activation and deactivation functions (Do not modify)
 		register_activation_hook(__FILE__, array($this,'install'));
 		register_deactivation_hook(__FILE__, array($this,'deactivate'));
-		register_uninstall_hook(__FILE__, array($this,'uninstall_removedata'));
+		register_uninstall_hook(__FILE__, array('favicon_switcher','uninstall_removedata'));
+	}
+	
+	/** ====================================================================================================================================================
+	* In order to uninstall the plugin, few things are to be done ... 
+	* (do not modify this function)
+	* 
+	* @return void
+	*/
+	
+	public function uninstall_removedata () {
+		global $wpdb ;
+		// DELETE OPTIONS
+		delete_option('favicon_switcher'.'_options') ;
+		if (is_multisite()) {
+			delete_site_option('favicon_switcher'.'_options') ;
+		}
+		
+		// DELETE SQL
+		if (function_exists('is_multisite') && is_multisite()){
+			$old_blog = $wpdb->blogid;
+			$old_prefix = $wpdb->prefix ; 
+			// Get all blog ids
+			$blogids = $wpdb->get_col($wpdb->prepare("SELECT blog_id FROM ".$wpdb->blogs));
+			foreach ($blogids as $blog_id) {
+				switch_to_blog($blog_id);
+				$wpdb->query("DROP TABLE ".str_replace($old_prefix, $wpdb->prefix, $wpdb->prefix . "pluginSL_" . 'favicon_switcher')) ; 
+			}
+			switch_to_blog($old_blog);
+		} else {
+			$wpdb->query("DROP TABLE ".$wpdb->prefix . "pluginSL_" . 'favicon_switcher' ) ; 
+		}
 	}
 
 	/**====================================================================================================================================================
@@ -98,13 +127,16 @@ class favicon_switcher extends pluginSedLex {
 		return 0 ; 
 	}
 		
-	/**====================================================================================================================================================
-	* Function to add the favicon
+	/** ====================================================================================================================================================
+	* Init css for the public side
+	* If you want to load a style sheet, please type :
+	*	<code>$this->add_inline_css($css_text);</code>
+	*	<code>$this->add_css($css_url_file);</code>
 	*
 	* @return void
 	*/
-	 
-	public function add_favicon() {
+	
+	function _public_css_load() {	
 		$upload_dir = wp_upload_dir();
 		$url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 		
@@ -126,6 +158,21 @@ class favicon_switcher extends pluginSedLex {
 			echo '<link rel="icon" href="'.$path.'" type="image/x-icon">' ; 
 			echo '<link rel="shortcut icon" href="'.$path.'" type="image/x-icon">' ; 
 		}
+	}
+	
+	/** ====================================================================================================================================================
+	* Init CSS for the admin side
+	* If you want to load a script, please type :
+	* 	<code>wp_enqueue_script( 'jsapi', 'https://www.google.com/jsapi');</code> or 
+	*	<code>wp_enqueue_script('my_plugin_script', plugins_url('/script.js', __FILE__));</code>
+	*	<code>$this->add_inline_js($js_text);</code>
+	*	<code>$this->add_js($js_url_file);</code>
+	*
+	* @return void
+	*/
+	
+	function _admin_css_load() {	
+		$this->_public_css_load() ; 
 	}
 	
 	/**====================================================================================================================================================
@@ -206,7 +253,7 @@ class favicon_switcher extends pluginSedLex {
 			ob_start() ; 
 				$params = new parametersSedLex($this, 'tab-parameters') ; 
 				
-				$params->add_title(sprintf(__('Default Favicon',$this->pluginID), $title)) ; 
+				$params->add_title(__('Default Favicon',$this->pluginID)) ; 
 				$old_favicon = $this->get_param('default_favicon') ; 
 				$new_favicon = $params->get_new_value('default_favicon') ; 
 				
