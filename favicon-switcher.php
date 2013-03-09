@@ -3,7 +3,7 @@
 Plugin Name: FavIcon Switcher
 Plugin Tag: favicon, icon, favorite
 Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>For instance, you may configure that all the page with the word "<code>receipices</code>" or "<code>important</code>" have a specific favicon.</p><p>You may configure as much favicons you want without restriction.</p><p>This plugin is under GPL licence.</p>
-Version: 1.2.1
+Version: 1.2.2
 Framework: SL_Framework
 Author: SedLex
 Author Email: sedlex@sedlex.fr
@@ -306,11 +306,13 @@ class favicon_switcher extends pluginSedLex {
 				
 				// We check whether a new entry is set
 				$array = $this->get_param('list_of_favicon') ; 
-				$id = $array[count($array)-1]+1 ; 
-				$new_rule = $params->get_new_value('custom'.$id.'_rule') ; 
-				if (($new_rule!==null)&&($new_rule!="")) {
-					$array[] = $id ; 
-					$this->set_param('list_of_favicon', $array) ; 
+				if (isset($array[count($array)-1])) {
+					$id = $array[count($array)-1]+1 ; 
+					$new_rule = $params->get_new_value('custom'.$id.'_rule') ; 
+					if (($new_rule!==null)&&($new_rule!="")) {
+						$array[] = $id ; 
+						$this->set_param('list_of_favicon', $array) ; 
+					}
 				}
 				
 				
@@ -368,7 +370,9 @@ class favicon_switcher extends pluginSedLex {
 				
 				// Propose to add a new image icon
 				$array = $this->get_param('list_of_favicon') ; 
-				$id = $array[count($array)-1]+1 ; 
+				$id = 1 ; 
+				if (isset($array[count($array)-1]))
+					$id = $array[count($array)-1]+1 ; 
 				$params->add_title(__('Add a new customized Favicon',$this->pluginID)) ; 
 				$params->add_param('custom'.$id.'_rule', __('The new regexp rule:',$this->pluginID)) ; 
 				$params->add_comment(sprintf(__('For instance, %s to have a specific icon for admin page',$this->pluginID), "<code>.*\/wp-admin\/.*</code>")) ; 

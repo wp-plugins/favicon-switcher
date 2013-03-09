@@ -55,7 +55,7 @@ Have fun !
 
 == Installation ==
 
-1. Upload this folder to your plugin directory (for instance '/wp-content/plugins/')
+1. Upload this folder favicon-switcher to your plugin directory (for instance '/wp-content/plugins/')
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Navigate to the 'SL plugins' box
 4. All plugins developed with the SL core will be listed in this box
@@ -67,6 +67,9 @@ Have fun !
 2. The ICO in the tabs of the web browser
 
 == Changelog ==
+
+= 1.2.2 =
+* Bug fixes and delete non useful file
 
 = 1.2.1 =
 * Update of the core
@@ -97,4 +100,4 @@ Have fun !
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:f0ba8eed25fe772838489da99d7b13ff
+InfoVersion:c0d309c086557613d6c9783065a3be86
