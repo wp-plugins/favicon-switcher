@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-01-22T22:06:44+00:00\n"
+"PO-Revision-Date: 2013-04-07T14:46:27+00:00\n"
 "Last-Translator: LeninhaLima <www.leninhalima.com.br>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,41 +29,47 @@ msgstr "Favicon padrão"
 msgid "The default favicon image:"
 msgstr "Imagem do favicon padrão"
 
-msgid "The multiresolution ICO has been generated and is stored %shere%s"
-msgstr "Multiplas resoluções do ICO formam geradas e armazenadas %here%"
-
-msgid "No ICO has been generated because this file is incompatible... Sorry !"
-msgstr "O ICO não foi gerado porque este arquivo é inconpatível... Desculpe!"
+msgid "An error occurred!"
+msgstr ""
 
 msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
 msgstr "Você deve adicionar arquivos do tipo ICO, PNG, GIF, JPG e BMP. Ele será convertido em um arquivo de multiresolução ICO"
 
 msgid "The multiresolution ICO is stored %shere%s"
-msgstr "As multiresoluções ICO estão armazenadas %here%"
+msgstr "As multiresoluções ICO estão armazenadas %shere%s"
 
-msgid "1st customized Favicon"
-msgstr "1º favicon customizado"
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr "Multiplas resoluções do ICO formam geradas e armazenadas %shere%s"
 
-msgid "The 1st customized favicon image:"
-msgstr "1ª imagem do favicon customizado"
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr "O ICO não foi gerado porque este arquivo é inconpatível... Desculpe!"
 
-msgid "The 1st regexp rule:"
-msgstr "1ª regra regexp"
+msgid "Custom Favicon n°%s"
+msgstr ""
+
+msgid "The regexp rule for the image n°%s:"
+msgstr ""
+
+msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
+msgstr ""
+
+msgid "Please note that if you delete the regexp, these entry will be deleted"
+msgstr ""
+
+msgid "Custom favicon image n°%s:"
+msgstr ""
+
+msgid "Add a new customized Favicon"
+msgstr ""
+
+msgid "The new regexp rule:"
+msgstr ""
 
 msgid "For instance, %s to have a specific icon for admin page"
-msgstr "Por exemplo,% s para ter um ícone específico para a página de administração"
+msgstr "Por exemplo, %s para ter um ícone específico para a página de administração"
 
-msgid "2nd customized Favicon"
-msgstr "2º favicon customuzado"
-
-msgid "The 2nd customized favicon image:"
-msgstr "2ª imagem do favicon customizado"
-
-msgid "The 2nd regexp rule:"
-msgstr "2ª regra regexp"
-
-msgid "For instance, %s to have a specific icon for the category with name %s"
-msgstr "Por exemplo,% s para ter um ícone específico para a página com o nome das categorias"
+msgid "A new image icon:"
+msgstr ""
 
 msgid "Parameters"
 msgstr "Parametros"

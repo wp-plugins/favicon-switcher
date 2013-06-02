@@ -31,8 +31,9 @@ This plugin is compatible with Multi-Site installation.
 * Czech (Czech Republic) translation provided by Bumerang
 * English (United States), default language
 * Spanish (Spain) translation provided by Diuska
-* French (France) translation provided by SedLex, wkpixearts
+* French (France) translation provided by SedLex, wkpixearts, jlmcreation
 * Hungarian (Hungary) translation provided by Metoyou
+* Indonesian (Indonesia) translation provided by 
 * Dutch (Netherlands) translation provided by webbuster.nl
 * Polish (Poland) translation provided by pablo
 * Portuguese (Brazil) translation provided by LeninhaLima
@@ -68,6 +69,9 @@ Have fun !
 
 == Changelog ==
 
+= 1.2.3 =
+* Modification of the URL
+
 = 1.2.2 =
 * Bug fixes and delete non useful file
 
@@ -100,4 +104,4 @@ Have fun !
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:6ff4c8b6f3e2999d148a237c74bb0720
+InfoVersion:d8beb21e349168b4127638ac011bb40d

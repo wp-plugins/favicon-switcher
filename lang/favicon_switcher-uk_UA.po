@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2011-11-28T00:27:47+00:00\n"
+"PO-Revision-Date: 2013-04-07T14:48:36+00:00\n"
 "Last-Translator: BilousovYuriu <prowebstud@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,41 +29,47 @@ msgstr "Іконка за замовчуванням"
 msgid "The default favicon image:"
 msgstr "Зображення іконки за замовчуванням"
 
-msgid "The multiresolution ICO has been generated and is stored %shere%s"
-msgstr "ICO різної роздільної здатності сформовані і зберігаються в %shere%"
-
-msgid "No ICO has been generated because this file is incompatible... Sorry !"
-msgstr "Жодна іконка не була сформована через несумісність файлу.... Вибачте!"
+msgid "An error occurred!"
+msgstr ""
 
 msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
 msgstr "Ви можете додати ICO, PNG, GIF, JPG і BMP файл. Він буде перетворений в кратномасштабний ICO файл."
 
 msgid "The multiresolution ICO is stored %shere%s"
-msgstr "Кратномасштабний ICO збережено %shere%"
+msgstr "Кратномасштабний ICO збережено %shere%s"
 
-msgid "1st customized Favicon"
-msgstr "перший індивідуальний Favicon"
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
+msgstr "ICO різної роздільної здатності сформовані і зберігаються в %shere%s"
 
-msgid "The 1st customized favicon image:"
-msgstr "зображення першого індивідуального Favicon"
+msgid "No ICO has been generated because this file is incompatible... Sorry !"
+msgstr "Жодна іконка не була сформована через несумісність файлу.... Вибачте!"
 
-msgid "The 1st regexp rule:"
-msgstr "перше правило регулярного виразу"
+msgid "Custom Favicon n°%s"
+msgstr ""
+
+msgid "The regexp rule for the image n°%s:"
+msgstr ""
+
+msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
+msgstr ""
+
+msgid "Please note that if you delete the regexp, these entry will be deleted"
+msgstr ""
+
+msgid "Custom favicon image n°%s:"
+msgstr ""
+
+msgid "Add a new customized Favicon"
+msgstr ""
+
+msgid "The new regexp rule:"
+msgstr ""
 
 msgid "For instance, %s to have a specific icon for admin page"
-msgstr "наприклад, %s специфічна іконка для сторінки адміністрування %s"
+msgstr "наприклад, %s специфічна іконка для сторінки адміністрування"
 
-msgid "2nd customized Favicon"
-msgstr "друге правило регулярного виразу"
-
-msgid "The 2nd customized favicon image:"
-msgstr "зображення другого індивідуального Favicon"
-
-msgid "The 2nd regexp rule:"
-msgstr "друге правило регулярного виразу"
-
-msgid "For instance, %s to have a specific icon for the category with name %s"
-msgstr "наприклад, %s специфічна іконка для категорії %s"
+msgid "A new image icon:"
+msgstr ""
 
 msgid "Parameters"
 msgstr "Параметри"
@@ -71,15 +77,9 @@ msgstr "Параметри"
 msgid "Manage translations"
 msgstr "Управління перекладами"
 
-msgid "This form is an easy way to contact the author and to discuss issues / incompatibilities / etc."
-msgstr "Ця форма простий спосіб зв&#039;язатися з автором і обговорити питання / несумісності / і т.д."
-
 msgid "Give feedback"
 msgstr "Залиште відгук"
 
-msgid "Here is the plugins developped by the author:"
-msgstr "Ось плагіни розроблені автором:"
-
-msgid "Other possible plugins"
-msgstr "Інші можливі плагіни"
+msgid "Other plugins"
+msgstr ""
 
