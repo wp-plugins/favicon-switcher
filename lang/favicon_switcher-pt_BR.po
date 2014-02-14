@@ -4,8 +4,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-04-07T14:46:27+00:00\n"
+"PO-Revision-Date: 2013-11-04T12:38:10+00:00\n"
 "Last-Translator: LeninhaLima <www.leninhalima.com.br>\n"
+"Last-Translator: Willian <will029@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +31,7 @@ msgid "The default favicon image:"
 msgstr "Imagem do favicon padrão"
 
 msgid "An error occurred!"
-msgstr ""
+msgstr "Ocorreu um erro!"
 
 msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
 msgstr "Você deve adicionar arquivos do tipo ICO, PNG, GIF, JPG e BMP. Ele será convertido em um arquivo de multiresolução ICO"
@@ -45,31 +46,31 @@ msgid "No ICO has been generated because this file is incompatible... Sorry !"
 msgstr "O ICO não foi gerado porque este arquivo é inconpatível... Desculpe!"
 
 msgid "Custom Favicon n°%s"
-msgstr ""
+msgstr "Personalizado Favicon n °%s"
 
 msgid "The regexp rule for the image n°%s:"
-msgstr ""
+msgstr "A regra regexp para a imagem n°%s:"
 
 msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
-msgstr ""
+msgstr "Por exemplo,%s para ter um ícone específico para a página de administração ou %s para mensagens com a palavra importante em seus títulos"
 
 msgid "Please note that if you delete the regexp, these entry will be deleted"
-msgstr ""
+msgstr "Por favor, note que se você excluir o regexp, estes entrada será excluída"
 
 msgid "Custom favicon image n°%s:"
-msgstr ""
+msgstr "Personalizado imagem favicon n°%s:"
 
 msgid "Add a new customized Favicon"
-msgstr ""
+msgstr "Adicionar um novo Favicon personalizado"
 
 msgid "The new regexp rule:"
-msgstr ""
+msgstr "A nova regra regexp:"
 
 msgid "For instance, %s to have a specific icon for admin page"
 msgstr "Por exemplo, %s para ter um ícone específico para a página de administração"
 
 msgid "A new image icon:"
-msgstr ""
+msgstr "Um novo ícone de imagem:"
 
 msgid "Parameters"
 msgstr "Parametros"

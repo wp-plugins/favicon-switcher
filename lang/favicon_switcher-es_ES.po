@@ -4,8 +4,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-02-23T09:20:13+00:00\n"
+"PO-Revision-Date: 2014-02-02T19:35:11+00:00\n"
 "Last-Translator: Diuska <http://www.contrabarra.es>\n"
+"Last-Translator: FelipeJAG <www.coyse.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +37,7 @@ msgid "No ICO has been generated because this file is incompatible... Sorry !"
 msgstr "Ningún ICO ha sido generado porque este archivo es incompatible... ¡Lo sentimos!"
 
 msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
-msgstr "Puedes añadir ICO, PNG, GIF, JPG y BMP. Será convertido en una multiresolución ico."
+msgstr "Puedes añadir ICO, PNG, GIF, JPG y BMP. Será convertido en un archivo de multiresolución ico."
 
 msgid "The multiresolution ICO is stored %shere%s"
 msgstr "La multiresolución ICO se a almacenado %shere%s"
@@ -51,7 +52,7 @@ msgid "The 1st regexp rule:"
 msgstr "La 1ª regla de regexp"
 
 msgid "For instance, %s to have a specific icon for admin page"
-msgstr "Por ejemplo, %s para tener un icono específico para una página de administración"
+msgstr "Por ejemplo, %s para tener un ícono específico para una página de administración"
 
 msgid "2nd customized Favicon"
 msgstr "2º Favicon personalizado"
@@ -69,14 +70,17 @@ msgid "Parameters"
 msgstr "Parámetros"
 
 msgid "Manage translations"
-msgstr "Traducciones"
+msgstr "Administrar traducciones"
 
 msgid "Give feedback"
-msgstr "Hacer feedback"
+msgstr "Dar retroalimentación"
 
 msgid "Other plugins"
 msgstr "Otros plugins"
 
-msgid "The file %s cannot be deleted. You should have a problem with file permissions or security restrictions."
-msgstr ""
+msgid "An error occurred!"
+msgstr "¡Ha ocurrido un error!"
+
+msgid "A new image icon:"
+msgstr "Un ícono de nueva imagen:"
 
