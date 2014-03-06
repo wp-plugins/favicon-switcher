@@ -1,114 +1,119 @@
 Content-Transfer-Encoding: 8bit
 
-#: favicon-switcher.php:239
+#: favicon-switcher.php:241
 #@ favicon_switcher
 msgid "This plugin enables multiple favicon for your website"
 msgstr ""
 
-#: favicon-switcher.php:256
+#: favicon-switcher.php:242
+#@ favicon_switcher
+msgid "Hence, you may choose the favicon you like for each post/page (or for each group of posts/pages) of your website."
+msgstr ""
+
+#: favicon-switcher.php:259
 #@ favicon_switcher
 msgid "Default Favicon"
 msgstr ""
 
-#: favicon-switcher.php:260
+#: favicon-switcher.php:263
 #@ favicon_switcher
 msgid "The default favicon image:"
 msgstr ""
 
-#: favicon-switcher.php:264
-#: favicon-switcher.php:336
+#: favicon-switcher.php:267
+#: favicon-switcher.php:339
 #@ favicon_switcher
 msgid "An error occurred!"
 msgstr ""
 
-#: favicon-switcher.php:268
-#: favicon-switcher.php:277
-#: favicon-switcher.php:340
-#: favicon-switcher.php:349
-#: favicon-switcher.php:380
+#: favicon-switcher.php:271
+#: favicon-switcher.php:280
+#: favicon-switcher.php:343
+#: favicon-switcher.php:352
+#: favicon-switcher.php:383
 #@ favicon_switcher
 msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
 msgstr ""
 
-#: favicon-switcher.php:275
-#: favicon-switcher.php:347
+#: favicon-switcher.php:278
+#: favicon-switcher.php:350
 #@ favicon_switcher
 msgid "The multiresolution ICO is stored %shere%s"
 msgstr ""
 
-#: favicon-switcher.php:290
-#: favicon-switcher.php:362
+#: favicon-switcher.php:293
+#: favicon-switcher.php:365
 #@ favicon_switcher
 msgid "The multiresolution ICO has been generated and is stored %shere%s"
 msgstr ""
 
-#: favicon-switcher.php:292
-#: favicon-switcher.php:364
+#: favicon-switcher.php:295
+#: favicon-switcher.php:367
 #@ favicon_switcher
 msgid "No ICO has been generated because this file is incompatible... Sorry !"
 msgstr ""
 
-#: favicon-switcher.php:324
+#: favicon-switcher.php:327
 #@ favicon_switcher
 msgid "Custom Favicon n°%s"
 msgstr ""
 
-#: favicon-switcher.php:325
+#: favicon-switcher.php:328
 #@ favicon_switcher
 msgid "The regexp rule for the image n°%s:"
 msgstr ""
 
-#: favicon-switcher.php:326
+#: favicon-switcher.php:329
 #@ favicon_switcher
 msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
 msgstr ""
 
-#: favicon-switcher.php:327
+#: favicon-switcher.php:330
 #@ favicon_switcher
 msgid "Please note that if you delete the regexp, these entry will be deleted"
 msgstr ""
 
-#: favicon-switcher.php:332
+#: favicon-switcher.php:335
 #@ favicon_switcher
 msgid "Custom favicon image n°%s:"
 msgstr ""
 
-#: favicon-switcher.php:376
+#: favicon-switcher.php:379
 #@ favicon_switcher
 msgid "Add a new customized Favicon"
 msgstr ""
 
-#: favicon-switcher.php:377
+#: favicon-switcher.php:380
 #@ favicon_switcher
 msgid "The new regexp rule:"
 msgstr ""
 
-#: favicon-switcher.php:378
+#: favicon-switcher.php:381
 #@ favicon_switcher
 msgid "For instance, %s to have a specific icon for admin page"
 msgstr ""
 
-#: favicon-switcher.php:379
+#: favicon-switcher.php:382
 #@ favicon_switcher
 msgid "A new image icon:"
 msgstr ""
 
-#: favicon-switcher.php:383
+#: favicon-switcher.php:386
 #@ favicon_switcher
 msgid "Parameters"
 msgstr ""
 
-#: favicon-switcher.php:389
+#: favicon-switcher.php:392
 #@ favicon_switcher
 msgid "Manage translations"
 msgstr ""
 
-#: favicon-switcher.php:395
+#: favicon-switcher.php:398
 #@ favicon_switcher
 msgid "Give feedback"
 msgstr ""
 
-#: favicon-switcher.php:400
+#: favicon-switcher.php:403
 #@ favicon_switcher
 msgid "Other plugins"
 msgstr ""
