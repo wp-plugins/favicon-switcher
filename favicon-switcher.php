@@ -3,7 +3,7 @@
 Plugin Name: FavIcon Switcher
 Plugin Tag: favicon, icon, favorite
 Description: <p>This plugin enables multiple favicon based on URL match rules. </p><p>For instance, you may configure that all the page with the word "<code>receipices</code>" or "<code>important</code>" have a specific favicon.</p><p>You may configure as much favicons you want without restriction.</p><p>This plugin is under GPL licence.</p>
-Version: 1.2.6
+Version: 1.2.7
 Framework: SL_Framework
 Author: SedLex
 Author Email: sedlex@sedlex.fr
@@ -238,8 +238,6 @@ class favicon_switcher extends pluginSedLex {
 				
 			<?php echo $this->signature ; ?>
 
-			<p><?php echo __('This plugin enables multiple favicon for your website', $this->pluginID) ; ?></p>
-			<p><?php echo __('Hence, you may choose the favicon you like for each post/page (or for each group of posts/pages) of your website.', $this->pluginID) ; ?></p>
 		<?php
 		
 			// On verifie que les droits sont corrects
@@ -251,10 +249,10 @@ class favicon_switcher extends pluginSedLex {
 			//		(bien mettre a jour les liens contenu dans les <li> qui suivent)
 			//
 			//==========================================================================================
-			$tabs = new adminTabs() ; 
+			$tabs = new SLFramework_Tabs() ; 
 			
 			ob_start() ; 
-				$params = new parametersSedLex($this, 'tab-parameters') ; 
+				$params = new SLFramework_Parameters($this, 'tab-parameters') ; 
 				
 				$params->add_title(__('Default Favicon',$this->pluginID)) ; 
 				$old_favicon = $this->get_param('default_favicon') ; 
@@ -385,20 +383,40 @@ class favicon_switcher extends pluginSedLex {
 				$params->flush() ; 
 			$tabs->add_tab(__('Parameters',  $this->pluginID), ob_get_clean() , plugin_dir_url("/").'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__))."core/img/tab_param.png") ; 	
 			
+			// HOW To
+			ob_start() ;
+				echo "<p>".__("This plugin is designed to change dynamically the favicon of your website.", $this->pluginID)."</p>" ; 
+			$howto1 = new SLFramework_Box (__("Purpose of that plugin", $this->pluginID), ob_get_clean()) ; 
+			ob_start() ;
+				echo "<p>".__("You just have to upload a first image (preferably a squared image) that will be used for default favicon: the favicon will be automatically created in the right format.", $this->pluginID)."</p>" ; 
+				echo "<p>".sprintf(__("If you want to add a specific favicon for specific pages, you will have to upload a new image and to associate it with a regular expression (e.g. %s) which match the wanted URL (e.g. %s).", $this->pluginID),"<code>.*\/images\/.*</code>","<code>http://domain.tld/images/</code>")."</p>" ; 
+			$howto2 = new SLFramework_Box (__("How to have different favicons?", $this->pluginID), ob_get_clean()) ; 
+			ob_start() ;
+				echo "<p>".__("This plugin works on multisite instalations.", $this->pluginID)."</p>" ; 
+				echo "<p>".__("Each blog work independently: they all can have their own favicon system.", $this->pluginID)."</p>" ; 
+				echo "<p>".sprintf(__("If you want to add a specific favicon for specific pages, you will have to upload a new image and to associate it with a regular expression (e.g. %s) which match the wanted URL (e.g. %s).", $this->pluginID),"<code>.*\/images\/.*</code>","<code>http://domain.tld/images/</code>")."</p>" ; 
+			$howto3 = new SLFramework_Box (__("How this plugin works of MU websites?", $this->pluginID), ob_get_clean()) ; 
+			ob_start() ; 
+				 echo $howto1->flush() ; 
+				 echo $howto2->flush() ; 
+				 echo $howto3->flush() ; 
+			$tabs->add_tab(__('How To',  $this->pluginID), ob_get_clean() , plugin_dir_url("/").'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__))."core/img/tab_how.png") ; 	
+
+
 			ob_start() ; 
 				$plugin = str_replace("/","",str_replace(basename(__FILE__),"",plugin_basename( __FILE__))) ; 
-				$trans = new translationSL($this->pluginID, $plugin) ; 
+				$trans = new SLFramework_Translation($this->pluginID, $plugin) ; 
 				$trans->enable_translation() ; 
 			$tabs->add_tab(__('Manage translations',  $this->pluginID), ob_get_clean() , plugin_dir_url("/").'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__))."core/img/tab_trad.png") ; 	
 
 			ob_start() ; 
 				$plugin = str_replace("/","",str_replace(basename(__FILE__),"",plugin_basename( __FILE__))) ; 
-				$trans = new feedbackSL($plugin, $this->pluginID) ; 
+				$trans = new SLFramework_Feedback($plugin, $this->pluginID) ; 
 				$trans->enable_feedback() ; 
 			$tabs->add_tab(__('Give feedback',  $this->pluginID), ob_get_clean() , plugin_dir_url("/").'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__))."core/img/tab_mail.png") ; 	
 			
 			ob_start() ; 
-				$trans = new otherPlugins("sedLex", array('wp-pirates-search')) ; 
+				$trans = new SLFramework_OtherPlugins("sedLex", array('wp-pirates-search')) ; 
 				$trans->list_plugins() ; 
 			$tabs->add_tab(__('Other plugins',  $this->pluginID), ob_get_clean() , plugin_dir_url("/").'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__))."core/img/tab_plug.png") ; 	
 	

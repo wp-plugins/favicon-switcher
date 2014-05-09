@@ -64,6 +64,9 @@ Have fun !
 
 == Changelog ==
 
+= 1.2.7 =
+* New add the How To
+
 = 1.2.6 =
 * Upgrade of the framework
 
@@ -108,4 +111,4 @@ Have fun !
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:209a593c13f1c83db4eba1bf7ea27413
+InfoVersion:d361aaeecf991ed38c6bdb5001c81ce62d446b3c
