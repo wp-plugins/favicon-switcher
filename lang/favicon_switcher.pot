@@ -1,119 +1,155 @@
 Content-Transfer-Encoding: 8bit
 
-#: favicon-switcher.php:241
-#@ favicon_switcher
-msgid "This plugin enables multiple favicon for your website"
-msgstr ""
-
-#: favicon-switcher.php:242
-#@ favicon_switcher
-msgid "Hence, you may choose the favicon you like for each post/page (or for each group of posts/pages) of your website."
-msgstr ""
-
-#: favicon-switcher.php:259
+#: favicon-switcher.php:257
 #@ favicon_switcher
 msgid "Default Favicon"
 msgstr ""
 
-#: favicon-switcher.php:263
+#: favicon-switcher.php:261
 #@ favicon_switcher
 msgid "The default favicon image:"
 msgstr ""
 
-#: favicon-switcher.php:267
-#: favicon-switcher.php:339
+#: favicon-switcher.php:265
+#: favicon-switcher.php:337
 #@ favicon_switcher
 msgid "An error occurred!"
 msgstr ""
 
-#: favicon-switcher.php:271
-#: favicon-switcher.php:280
-#: favicon-switcher.php:343
-#: favicon-switcher.php:352
-#: favicon-switcher.php:383
+#: favicon-switcher.php:269
+#: favicon-switcher.php:278
+#: favicon-switcher.php:341
+#: favicon-switcher.php:350
+#: favicon-switcher.php:381
 #@ favicon_switcher
 msgid "You may add ICO, PNG, GIF, JPG and BMP files. It will be converted into a multiresolution ico file."
 msgstr ""
 
-#: favicon-switcher.php:278
-#: favicon-switcher.php:350
+#: favicon-switcher.php:276
+#: favicon-switcher.php:348
 #@ favicon_switcher
 msgid "The multiresolution ICO is stored %shere%s"
+msgstr ""
+
+#: favicon-switcher.php:291
+#: favicon-switcher.php:363
+#@ favicon_switcher
+msgid "The multiresolution ICO has been generated and is stored %shere%s"
 msgstr ""
 
 #: favicon-switcher.php:293
 #: favicon-switcher.php:365
 #@ favicon_switcher
-msgid "The multiresolution ICO has been generated and is stored %shere%s"
-msgstr ""
-
-#: favicon-switcher.php:295
-#: favicon-switcher.php:367
-#@ favicon_switcher
 msgid "No ICO has been generated because this file is incompatible... Sorry !"
 msgstr ""
 
-#: favicon-switcher.php:327
+#: favicon-switcher.php:325
 #@ favicon_switcher
 msgid "Custom Favicon n°%s"
 msgstr ""
 
-#: favicon-switcher.php:328
+#: favicon-switcher.php:326
 #@ favicon_switcher
 msgid "The regexp rule for the image n°%s:"
 msgstr ""
 
-#: favicon-switcher.php:329
+#: favicon-switcher.php:327
 #@ favicon_switcher
 msgid "For instance, %s to have a specific icon for admin page or %s for posts having the word important in their titles"
 msgstr ""
 
-#: favicon-switcher.php:330
+#: favicon-switcher.php:328
 #@ favicon_switcher
 msgid "Please note that if you delete the regexp, these entry will be deleted"
 msgstr ""
 
-#: favicon-switcher.php:335
+#: favicon-switcher.php:333
 #@ favicon_switcher
 msgid "Custom favicon image n°%s:"
 msgstr ""
 
-#: favicon-switcher.php:379
+#: favicon-switcher.php:377
 #@ favicon_switcher
 msgid "Add a new customized Favicon"
 msgstr ""
 
-#: favicon-switcher.php:380
+#: favicon-switcher.php:378
 #@ favicon_switcher
 msgid "The new regexp rule:"
 msgstr ""
 
-#: favicon-switcher.php:381
+#: favicon-switcher.php:379
 #@ favicon_switcher
 msgid "For instance, %s to have a specific icon for admin page"
 msgstr ""
 
-#: favicon-switcher.php:382
+#: favicon-switcher.php:380
 #@ favicon_switcher
 msgid "A new image icon:"
 msgstr ""
 
-#: favicon-switcher.php:386
+#: favicon-switcher.php:384
 #@ favicon_switcher
 msgid "Parameters"
 msgstr ""
 
-#: favicon-switcher.php:392
+#: favicon-switcher.php:388
 #@ favicon_switcher
-msgid "Manage translations"
+msgid "This plugin is designed to change dynamically the favicon of your website."
+msgstr ""
+
+#: favicon-switcher.php:389
+#@ favicon_switcher
+msgid "Purpose of that plugin"
+msgstr ""
+
+#: favicon-switcher.php:391
+#@ favicon_switcher
+msgid "You just have to upload a first image (preferably a squared image) that will be used for default favicon: the favicon will be automatically created in the right format."
+msgstr ""
+
+#: favicon-switcher.php:392
+#: favicon-switcher.php:397
+#@ favicon_switcher
+msgid "If you want to add a specific favicon for specific pages, you will have to upload a new image and to associate it with a regular expression (e.g. %s) which match the wanted URL (e.g. %s)."
+msgstr ""
+
+#: favicon-switcher.php:393
+#@ favicon_switcher
+msgid "How to have different favicons?"
+msgstr ""
+
+#: favicon-switcher.php:395
+#@ favicon_switcher
+msgid "This plugin works on multisite instalations."
+msgstr ""
+
+#: favicon-switcher.php:396
+#@ favicon_switcher
+msgid "Each blog work independently: they all can have their own favicon system."
 msgstr ""
 
 #: favicon-switcher.php:398
 #@ favicon_switcher
-msgid "Give feedback"
+msgid "How this plugin works of MU websites?"
 msgstr ""
 
 #: favicon-switcher.php:403
+#@ favicon_switcher
+msgid "How To"
+msgstr ""
+
+#: favicon-switcher.php:410
+#@ favicon_switcher
+msgid "Manage translations"
+msgstr ""
+
+#: favicon-switcher.php:416
+#@ favicon_switcher
+msgid "Give feedback"
+msgstr ""
+
+#: favicon-switcher.php:421
 #@ favicon_switcher
 msgid "Other plugins"
 msgstr ""
