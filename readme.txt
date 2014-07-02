@@ -6,7 +6,7 @@ Author URI: http://www.sedlex.fr/
 Plugin URI: http://wordpress.org/plugins/favicon-switcher/
 Tags: favicon, icon, favorite
 Requires at least: 3.0
-Tested up to: 3.9
+Tested up to: 3.9.1
 Stable tag: trunk
 
 This plugin enables multiple favicon based on URL match rules. 
@@ -36,7 +36,7 @@ This plugin is compatible with Multi-Site installation.
 * Indonesian (Indonesia) translation provided by 
 * Dutch (Netherlands) translation provided by webbuster.nl
 * Polish (Poland) translation provided by pablo
-* Portuguese (Brazil) translation provided by LeninhaLima, Willian
+* Portuguese (Brazil) translation provided by LeninhaLima, Willian, Vanderson
 * Portuguese (Portugal) translation provided by NunoVieira
 * Russian (Russia) translation provided by AnatoliyNovyk
 * Ukrainian (Ukraine) translation provided by BilousovYuriu
@@ -63,6 +63,9 @@ Have fun !
 2. The ICO in the tabs of the web browser
 
 == Changelog ==
+
+= 1.2.8 =
+* Various improvement of the framework
 
 = 1.2.7 =
 * New add the How To
@@ -111,4 +114,4 @@ Have fun !
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:78dfa063cd75b7c5d28246f68af416664ed99fd6
+InfoVersion:2b121eb732ab180a5df84eb2bf891bba07eef5bc
