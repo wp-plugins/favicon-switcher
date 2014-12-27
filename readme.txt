@@ -6,8 +6,9 @@ Author URI: http://www.sedlex.fr/
 Plugin URI: http://wordpress.org/plugins/favicon-switcher/
 Tags: favicon, icon, favorite
 Requires at least: 3.0
-Tested up to: 3.9.1
+Tested up to: 4.2
 Stable tag: trunk
+License: GPLv3
 
 This plugin enables multiple favicon based on URL match rules. 
 
@@ -64,6 +65,9 @@ Have fun !
 
 == Changelog ==
 
+= 1.2.9 =
+* NEW: add icon
+
 = 1.2.8 =
 * Various improvement of the framework
 
@@ -114,4 +118,4 @@ Have fun !
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:2b121eb732ab180a5df84eb2bf891bba07eef5bc
+InfoVersion:d18a987ab2d6d56e6520956ae13890346e3002d3
