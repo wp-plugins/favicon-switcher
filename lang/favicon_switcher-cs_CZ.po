@@ -4,8 +4,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-04-07T14:45:17+00:00\n"
+"PO-Revision-Date: 2015-01-01T09:32:14+00:00\n"
 "Last-Translator: Bumerang <pumaj@seznam.cz>\n"
+"Last-Translator: Chavi <stanleycz@email.cz>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,4 +83,31 @@ msgstr "Podělte se o zkušenosti"
 
 msgid "Other plugins"
 msgstr "Další pluginy"
+
+msgid "This plugin is designed to change dynamically the favicon of your website."
+msgstr "Tento plugin je navržený k tomu, aby změnil favicon vašeho webu."
+
+msgid "Purpose of that plugin"
+msgstr "Účel tohoto pluginu"
+
+msgid "You just have to upload a first image (preferably a squared image) that will be used for default favicon: the favicon will be automatically created in the right format."
+msgstr "Musíte uploadovat první obrázek (nejlépe ve tvaru čtverce), který bude použitý pro výchozí favicon: favicon bude vytvořený ve správném formátu."
+
+msgid "If you want to add a specific favicon for specific pages, you will have to upload a new image and to associate it with a regular expression (e.g. %s) which match the wanted URL (e.g. %s)."
+msgstr "Chcete-li přidat konkrétní favicon pro konkrétní stránky , budete muset nahrát nový obrázek a spojit jej s regulárním výrazem ( např %s) , který odpovídá požadované adrese URL ( např %s ) ."
+
+msgid "How to have different favicons?"
+msgstr "Jak mít různé favicony?"
+
+msgid "This plugin works on multisite instalations."
+msgstr "Tento plugin pracuje i na více síťových instalacích (multisite)"
+
+msgid "Each blog work independently: they all can have their own favicon system."
+msgstr "Každý blog (web) pracuje nezávisle: všechny mohou mít svůj vlastní favicon."
+
+msgid "How this plugin works of MU websites?"
+msgstr "Jak tento plugin pracuje u MU webových stránek?"
+
+msgid "How To"
+msgstr "Jak na to"
 
