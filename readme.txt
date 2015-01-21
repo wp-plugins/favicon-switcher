@@ -29,7 +29,7 @@ This plugin is compatible with Multi-Site installation.
 = Localization =
 
 * Bulgarian (Bulgaria) translation provided by 
-* Czech (Czech Republic) translation provided by Bumerang
+* Czech (Czech Republic) translation provided by Bumerang, Chavi
 * English (United States), default language
 * Spanish (Spain) translation provided by Diuska, FelipeJAG
 * French (France) translation provided by SedLex, wkpixearts, jlmcreation
@@ -64,6 +64,9 @@ Have fun !
 2. The ICO in the tabs of the web browser
 
 == Changelog ==
+
+= 1.2.10 =
+* NEW: delete temp files upon desinstall
 
 = 1.2.9 =
 * NEW: add icon
@@ -118,4 +121,4 @@ Have fun !
 Visit http://www.sedlex.fr/cote_geek/
 
  
-InfoVersion:48a80e484d63c1a5dc586f08e4a221f08c67cde1
+InfoVersion:c0ab14a7de35e4a9ea4b5b5f76d798466dc5e09f
