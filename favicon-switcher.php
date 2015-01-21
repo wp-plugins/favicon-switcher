@@ -96,6 +96,7 @@ class favicon_switcher extends pluginSedLex {
 		
 		// DELETE FILES if needed
 		SLFramework_Utils::rm_rec(WP_CONTENT_DIR."/sedlex/favicon/"); 
+		SLFramework_Utils::rm_rec(WP_CONTENT_DIR."/uploads/favicon/"); 
 		$plugins_all = 	get_plugins() ; 
 		$nb_SL = 0 ; 	
 		foreach($plugins_all as $url => $pa) {
